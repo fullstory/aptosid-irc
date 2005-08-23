@@ -1,0 +1,196 @@
+[$Version]
+update_info=konversation.upd:0.14-mainwindow,konversation.upd:0.17-versionreply,konversation.upd:0.18-lagtimeout
+
+[Appearance]
+AutoUserhost=false
+BackgroundImage=
+CloseButtonsAlignRight=false
+CloseButtonsOnTabs=false
+FilterColorCodes=false
+FocusNewQueries=false
+IRCColors=#ffffff,#000000,#000080,#008000,#ff0000,#a52a2a,#800080,#ff8000,#808000,#00ff00,#008080,#00ffff,#0000ff,#ffc0cb,#a0a0a0,#c0c0c0
+ListFont=Bitstream Vera Sans,10,-1,5,50,0,0,0,0,0
+Margin=3
+NickColors=#e90e7f,#8e55e9,#b30e0e,#18b33c,#58adb3,#9e54b3,#0fb39a,#3176b3,#000000
+ParagraphSpacing=2
+ShowDate=false
+ShowModeButtons=true
+ShowNicknameBox=true
+ShowQuickButtons=true
+ShowRememberLineInAllWindows=false
+ShowTabBarCloseButton=true
+ShowTopic=true
+Spacing=2
+TextFont=Bitstream Vera Sans Mono,10,-1,5,50,0,0,0,0,0
+TimestampFormat=hh:mm:ss
+Timestamping=true
+UseBoldNicks=false
+UseColoredNicks=true
+UseLiteralModes=false
+UseParagraphSpacing=false
+UseSpacing=false
+
+[Button List]
+Button0=Op,/OP %u%n
+Button1=DeOp,/DEOP %u%n
+Button2=WhoIs,/WHOIS %s,%%u%n
+Button3=Version,/CTCP %s,%%u VERSION%n
+Button4=Kick,/KICK %u%n
+Button5=Ban,/BAN %u%n
+Button6=Part,/PART %c bus error%n
+Button7=Quit,/QUIT core dumped.%n
+
+[Channel 0]
+Name=#kanotix
+Password=
+
+[DCC Settings]
+AddPartner=false
+AutoGet=false
+AutoResume=false
+BufferSize=8192
+ChatPortsFirst=0
+ChatPortsLast=0
+CreateFolder=true
+FastSend=true
+IPv4Fallback=false
+IPv4FallbackInterface=eth0
+MethodToGetOwnIp=1
+SendPortsFirst=0
+SendPortsLast=0
+SendTimeout=120
+SpecificChatPorts=false
+SpecificOwnIp=0.0.0.0
+SpecificSendPorts=false
+
+[Flags]
+AutoReconnect=true
+AutoRejoin=true
+AutojoinOnInvite=false
+BlinkingTabs=false
+BringToFront=true
+DisableExpansion=false
+FixedMOTD=false
+HideUnimportantEvents=false
+InputFieldsBackgroundColor=true
+Log=false
+LogFollowsNick=true
+LowerLog=true
+ReconnectCount=10
+ShowServerList=false
+TabPlacement=1
+
+[General Options]
+AutoWhoContinuousEnabled=true
+AutoWhoContinuousInterval=90
+AutoWhoNicksLimit=200
+Beep=false
+ClickableNicks=true
+CommandChar=/
+CustomVersionReply=
+CustomVersionReplyEnabled=false
+DisableNotifyWhileAway=false
+LogfileBufferSize=100
+LogfileReaderGeometry=500,300
+MaximumLag=180
+MultilineEditGeometry=-1,-1
+NicknameGeometry=-1,-1
+NicksOnlineGeometry=-1,-1
+NotifyDoubleClickAction=/WHOIS %u%n
+RawLog=false
+RedirectServerAndAppMsgToStatusPane=false
+ScrollbackMax=1000
+ServerWindowMenuBarStatus=true
+ShowBackgroundImage=false
+ShowRealNames=false
+ShowTrayIcon=false
+SystrayOnly=false
+TrayNotify=true
+TrayNotifyOnlyOwnNick=true
+
+[Highlight List]
+HighlightNick=true
+HighlightNickColor=ff0000
+HighlightOwnLines=false
+HighlightOwnLinesColor=ff0000
+HighlightSoundsEnabled=true
+
+[Message Text Colors]
+ActionMessage=0000ff
+AlternateBackground=ffffff
+BacklogMessage=aaaaaa
+ChannelMessage=000000
+CommandMessage=960096
+LinkMessage=0000ff
+QueryMessage=0000ff
+ServerMessage=91640a
+TextViewBackground=ffffff
+Time=709070
+
+[Nick Completion]
+CaseSensitive=false
+Mode=0
+SuffixMiddle=\s
+SuffixStart=:\s
+
+[Notify List]
+NotifyDelay=5
+OnStartup=false
+UseNotify=true
+
+[OSD]
+Alignment=0
+OSDBackgroundColor=000000
+OSDDrawShadow=false
+OSDDuration=3000
+OSDFont=xft,10,-1,5,50,0,0,0,0,0
+OSDScreen=0
+OSDTextColor=ffffff
+OSDUseCustomColors=false
+OffsetX=30
+OffsetY=50
+ShowChannel=false
+ShowChannelEvent=false
+ShowOwnNick=true
+ShowQuery=false
+UseOSD=true
+
+[Open-with settings]
+CompletionMode=5
+
+[Path Settings]
+DccPath=$HOME/dccrecv
+LogfilePath=$HOME/.kde/share/apps/konversation/logs
+
+[Server 0]
+Port=6667
+SSLEnabled=false
+Server=irc.freenode.org
+
+[ServerGroup 0]
+AutoConnect=true
+AutoJoinChannels=Channel 0
+ConnectCommands=
+EnableNotifications=true
+Group=
+Name=Freenode
+ServerList=Server 0
+
+[Sort Nicknames]
+AdminValue=1
+HalfopValue=8
+NoRightsValue=32
+OperatorValue=4
+OwnerValue=2
+SortByStatus=true
+SortCaseInsensitive=true
+VoiceValue=16
+
+[Themes]
+EmotIconTheme=Default
+EnableEmotIcons=false
+IconTheme=square
+
+[Web Browser Settings]
+UseKdeDefault=true
+WebBrowserCmd=mozilla-firefox '%u'

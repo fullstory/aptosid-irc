@@ -1,0 +1,416 @@
+#!/bin/bash
+# Copyright (C) 2003 Jörg Schirottke <master@kanotix.com>
+# Copyright (C) 2005 Michiel Lieuwe de Boer
+# Copyright (C) 2005 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+
+
+# define user settings
+SERVER="irc.freenode.net"
+PORT="6667"
+CHANNEL="#kanotix"
+NICK="Web-kanotix$((RANDOM%1000))"
+FALLBACK_USER="$(getent passwd 1000 | cut -d\: -f1)"
+XTERM_OPT="-bg black -fg white -cr red -ls -e"
+
+
+# determine system status
+DIALOG=$(type -p dialog)		|| DIALOG="/usr/bin/dialog"
+KDIALOG=$(type -p kdialog)		|| KDIALOG="/usr/bin/kdialog"
+XDIALOG=$(type -p Xdialog)		|| XDIALOG="/usr/bin/Xdialog"
+SU=$(type -p su)			|| SU="/bin/su"
+XTERMINAL=$(type -p rxvt)		|| XTERMINAL="/usr/bin/rxvt"
+
+BITCHX=$(type -p bitchx)		|| BITCHX="/usr/bin/bitchx"
+IRSSI=$(type -p irssi)			|| IRSSI="/usr/bin/irssi"
+KSIRC=$(type -p ksirc)			|| KSIRC="/usr/bin/ksirc"
+KONVERSATION=$(type -p konversation)	|| KONVERSATION="/usr/bin/konversation"
+WEECHAT=$(type -p weechat-curses)	|| WEECHATE="/usr/bin/weechat-curses"
+XCHAT=$(type -p xchat)			|| XCHAT="/usr/bin/xchat"
+
+# internal functions
+function inputbox {
+	# inputbox title text width height [init]
+	TITLE="$1"
+	TEXT="$2"
+	WIDTH="$3"
+	HEIGHT="$4"
+	INIT="$5"
+	
+	if [ -n "$DISPLAY" ]; then
+		if [ -x "$KDIALOG" ]; then
+			"$KDIALOG" --title "$TITLE" --inputbox "$TEXT" "$NICK"
+		else
+			if [ -x "$XDIALOG" ]; then
+				"$XDIALOG" --title "$TITLE" --inputbox "$TEXT" $HEIGHT $WIDTH "$INIT"
+			fi
+		fi		
+	else
+		"$DIALOG" --stdout --title "$TITLE" --inputbox "$TEXT" $HEIGHT $WIDTH "$INIT"
+	fi
+}
+
+function kanotix_irssi () {
+	#TERM_TYPE="utf-8"
+	TERM_TYPE="8bit"
+	#IRSSI_OLD="$HOME/.irssi" (This is for when the previous config is copied and mixed with ours, the complicated way)
+	IRSSICFG="/tmp/.irssi$RANDOM"
+
+	CTCPS=0
+	if [ -e /etc/kanotix-version ]; then
+		QUITMSG="$(< /etc/kanotix-version) | http://www.kanotix.com"
+	else
+		QUITMSG="http://www.kanotix.com"
+	fi
+
+	if [[ -d $IRSSICFG ]]; then
+		rm -rf "${IRSSICFG}.old"
+		mv "$IRSSICFG" "${IRSSICFG}.old"
+	fi
+	mkdir -p "$IRSSICFG"
+
+	#if [[ -d $IRSSI_OLD ]]; then cp -a $IRSSI_OLD $IRSSICFG ... etcetera
+	# (This is for when the previous config is copied and mixed with ours, the complicated way)
+
+	cat <<_EOF_ >"$IRSSICFG/config"
+servers = (
+  {
+    address = "$SERVER";
+    chatnet = "freenode";
+    port = "$PORT";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  freenode = {
+    type = "IRC";
+    max_kicks = "4";
+    max_modes = "4";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+};
+
+channels = (
+  { name = "#kanotix"; chatnet = "freenode"; autojoin = "yes"; }
+);
+_EOF_
+
+	# See also special kanotix aliases in here, like "/IBS", "/IBV", "/IB", "/GFX", "/SND", and "/X"
+	cat <<"_EOF_" >>"$IRSSICFG/config"
+aliases = {
+  J = "join";
+  WJOIN = "join -window";
+  WQUERY = "query -window";
+  LEAVE = "part";
+  BYE = "quit";
+  EXIT = "quit";
+  SIGNOFF = "quit";
+  DESCRIBE = "action";
+  DATE = "time";
+  HOST = "userhost";
+  LAST = "lastlog";
+  SAY = "msg *";
+  WI = "whois";
+  WII = "whois $0 $0";
+  WW = "whowas";
+  W = "who";
+  N = "names";
+  M = "msg";
+  T = "topic";
+  C = "clear";
+  CL = "clear";
+  K = "kick";
+  KB = "kickban";
+  KN = "knockout";
+  BANS = "ban";
+  B = "ban";
+  MUB = "unban *";
+  UB = "unban";
+  IG = "ignore";
+  UNIG = "unignore";
+  SB = "scrollback";
+  UMODE = "mode $N";
+  WC = "window close";
+  WN = "window new hide";
+  SV = "say Irssi $J ($V) - http://irssi.org/";
+  GOTO = "sb goto";
+  CHAT = "dcc chat";
+  RUN = "SCRIPT LOAD";
+  UPTIME = "eval exec - expr `date +%s` - \\$F | awk '{print \"Irssi uptime: \"int(\\\\\\$1/3600/24)\"d \"int(\\\\\\$1/3600%24)\"h \"int(\\\\\\$1/60%60)\"m \"int(\\\\\\$1%60)\"s\" }'";
+  CALC = "exec - if which bc &>/dev/null\\; then echo '$*' | bc | awk '{print \"$*=\"$$1}'\\; else echo bc was not found\\; fi";
+  SBAR = "STATUSBAR";
+  INVITELIST = "mode $C +I";
+  Q = "QUERY";
+  QUIT = "foreach window /part;/quit";
+  IBS = "exec -o infobash";
+  IBV = "exec -o infobash -v2";
+  IB = "exec -o infobash -v";
+  GFX = "exec -o awk '/^Section *\"Device\"\\$/,/EndSection/ {if (/^[ \\t]*Driver/) {a[\\$2]++}} /^[ \\t]*(VertR|HorizSy)/{gsub(/#.*|\\t/,\"\",\\$0)\\;b[\\$0]++} END {for (i in a) {print i} for (i in b) {print i}}' /etc/X11/XF86Config-4";
+  SND = "exec -o cat /proc/asound/cards /etc/sysconfig/sound"; 
+  X = "QUIT";
+    
+};
+
+statusbar = {
+  # formats:
+  # when using {templates}, the template is shown only if it's argument isn't
+  # empty unless no argument is given. for example {sb} is printed always,
+  # but {sb $T} is printed only if $T isn't empty.
+
+  items = {
+    # start/end text in statusbars
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+
+    topicbarstart = "{topicsbstart}";
+    topicbarend = "{topicsbend}";
+
+    # treated "normally", you could change the time/user name to whatever
+    time = "{sb $Z}";
+    user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+
+    # treated specially .. window is printed with non-empty windows,
+    # window_empty is printed with empty windows
+    window = "{sb $winref:$itemname{sbmode $M}}";
+    window_empty = "{sb $winref{sbservertag $tag}}";
+    prompt = "{prompt $[.15]itemname}";
+    prompt_empty = "{prompt $winname}";
+    topic = " $topic";
+    topic_empty = " Irssi v$J - http://irssi.org/help/";
+
+    # all of these treated specially, they're only displayed when needed
+    lag = "{sb Lag: $0-}";
+    act = "{sb Act: $0-}";
+    more = "-- more --";
+  };
+
+  # there's two type of statusbars. root statusbars are either at the top
+  # of the screen or at the bottom of the screen. window statusbars are at
+  # the top/bottom of each split window in screen.
+  default = {
+    # the "default statusbar" to be displayed at the bottom of the window.
+    # contains all the normal items.
+    window = {
+      disabled = "no";
+
+      # window, root
+      type = "window";
+      # top, bottom
+      placement = "bottom";
+      # number
+      position = "1";
+      # active, inactive, always
+      visible = "active";
+
+      # list of items in statusbar in the display order
+      items = {
+        barstart = { priority = "100"; };
+        time = { };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        act = { priority = "10"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # statusbar to use in inactive split windows
+    window_inact = {
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # we treat input line as yet another statusbar :) It's possible to
+    # add other items before or after the input line item.
+    prompt = {
+      type = "root";
+      placement = "bottom";
+      # we want to be at the bottom always
+      position = "100";
+      visible = "always";
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        # treated specially, this is the real input line.
+        input = { priority = "10"; };
+      };
+    };
+
+    # topicbar
+    topic = {
+      type = "root";
+      placement = "top";
+      position = "1";
+      visible = "always";
+      items = {
+        topicbarstart = { priority = "100"; };
+        topic = { };
+        topic_empty = { };
+        topicbarend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+_EOF_
+
+	cat <<_EOF_ >>"$IRSSICFG/config"
+settings = {
+  core = {
+    real_name = "Kanotix user";
+    user_name = "kanotix";
+    nick = "$NICK";
+    quit_message = "$QUITMSG";
+  };
+
+  "irc/core" = { part_message = "$QUITMSG"; };
+  
+  "irc/dcc" = {
+    dcc_upload_path = "/tmp";
+    dcc_download_path = "/tmp";
+    dcc_autoget = "no";
+    dcc_autochat_masks = "*";
+    dcc_autoget_masks = "= *";
+  };
+  "fe-text" = { term_type = "$TERM_TYPE"; };
+  "fe-common/core" = { completion_char = ","; };
+  
+};
+logs = { };
+
+windows = {
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "$CHANNEL";
+        tag = "freenode";
+      }
+    );
+  };
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+};
+mainwindows = { 2 = { first_line = "1"; lines = "47"; }; };
+_EOF_
+
+	((CTCPS)) && echo 'ignores = ( { level = "CTCPS"; } );' >>"$IRSSICFG/config"
+
+	$IRSSI --home=$IRSSICFG
+	RETC=$?
+	rm -rf "$IRSSICFG"
+	((RETC)) && return 127 || exit 0
+}
+
+##############################################################################
+#                               int main(void);                              #
+##############################################################################
+
+# yes, this stuff is elementary
+if [ -z "$DISPLAY" ]; then
+	for i in "$DIALOG" "$SU"; do
+		if [ ! -x "$i" ]; then
+			echo "$i: missing, terminate abnormally"
+			exit 999
+		fi
+	done
+else
+	for i in "$DIALOG" "$XDIALOG" "$XTERMINAL" "$SU"; do
+		if [ ! -x "$i" ]; then
+			echo "$i: missing, terminate abnormally"
+			exit 998
+		fi
+	done
+fi
+
+if [ "$1" == "--tty" ]; then
+	DISPLAY=""
+fi
+
+# are you insane?
+if [ "`id -u`" == "0" ]; then
+	echo "ROOOOOOOOOOOOT has landed!"
+	echo ""
+	echo "Don't ever call any IRC client as root"
+
+	if [ -z "$FALLBACK" ]; then
+		# yes, you deserve it - and I'm to lazy to enhance kanotix-su's features ;)
+		echo "Employ fallback and start IRC as $FALLBACK_USER."
+		if [ -n "$DISPLAY" ]; then
+			exec $XTERMINAL $XTERM_OPT $SU -c "$0 --tty" "$FALLBACK_USER"
+		else
+			exec $SU -c "$0 --tty" "$FALLBACK_USER"
+		fi
+	else
+		exit 996
+	fi
+
+	if [ "`id -u`" == "0" ]; then
+		echo "you had your chance, I'm not going to start any IRC client as root"
+		exit 997
+	fi
+fi
+
+# choose your nick
+NICK=$(inputbox "KANOTIX IRC Chat" "Choose your nick" 50 10 "$NICK") || exit 0
+
+# try to start your irc client
+if [ -z "$DISPLAY" ]; then
+	# tty
+	if [ -x "$IRSSI" ]; then
+		kanotix_irssi
+		exit $?
+	fi
+
+	[ -x "$WEECHAT" ] && \
+		exec $WEECHAT "irc://$NICK@$SERVER:$PORT/$CHANNEL"
+
+	[ -x "$BITCHX" ] && \
+		exec "$BITCHX" -c "$CHANNEL" -n "$NICK"
+else
+	# X11
+	[ -x "$KONVERSATION" ] && \
+		exec "$KONVERSATION" --server "$SERVER" --port "$PORT" --channel "$CHANNEL" --nick "$NICK"
+
+	[ -x "$KSIRC" ] && \
+		exec "$KSIRC" --server "$SERVER" --channel "$CHANNEL" --nick "$NICK"
+
+	[ -x "$XCHAT" ] && \
+		exec "$XCHAT" irc://"$SERVER":"$PORT"/"$CHANNEL"
+
+	# nasty fallback, but well - it works ;)
+	exec $XTERMINAL $XTERM_OPT $0 --tty
+fi
+
+# Oops...
+echo "ERROR: failed to start any suitable IRC Client"
+for i in "$DIALOG" "$XDIALOG" "$BITCHX" "$IRSSI" "$KSIRC" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
+	if [ -x "$i" ]; then
+		echo "$i: found."
+	else
+		echo "$i: NOT found."
+	fi
+done
+

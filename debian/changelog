@@ -1,0 +1,44 @@
+kanotix-irc (0.2.2) unstable; urgency=low
+
+  * Replaces user-profile-kanotix (<< 0.6.47).
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 17 Jul 2005 01:26:20 +0200
+
+kanotix-irc (0.2.1) unstable; urgency=low
+
+  * konversation: increase font size.
+  * konversation: disable logging.
+  * weechat: add support
+  * weechat: add scripts and preconfig (contributed by mzilikazi).
+  * xchat2: add profile.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 16 Jul 2005 23:53:37 +0200
+
+kanotix-irc (0.2) unstable; urgency=low
+
+  * add kdialog as preferred option.
+  * add konversation 0.18+ preconfig.
+  * remove testing clauses.
+  * abort if uid=1000 doesn't exist while being called as root.
+  * rewrite dialog wrapper.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 16 Jul 2005 21:38:57 +0200
+
+kanotix-irc (0.1.2) unstable; urgency=low
+
+  * fix icon placement.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 16 Jul 2005 17:34:03 +0200
+
+kanotix-irc (0.1.1) unstable; urgency=low
+
+  * major bugfixes.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 16 Jul 2005 17:09:51 +0200
+
+kanotix-irc (0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 16 Jul 2005 15:04:06 +0200
+

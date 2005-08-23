@@ -1,0 +1,5 @@
+kanotix-irc usr/bin/
+skel etc/
+skel/.xchat2 usr/share/knoppix/profile/
+skel/Desktop/*.desktop usr/share/applnk/Internet/
+hicolor usr/share/icons/

@@ -1,0 +1,15 @@
+Source: kanotix-irc
+Section: net
+Priority: optional
+Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
+Build-Depends-Indep: cdbs (>= 0.4.23-1.1), build-essential, debhelper (>= 4.1.0)
+Standards-Version: 3.6.2
+
+Package: kanotix-irc
+Architecture: all
+Depends: dialog, irssi | irssi-text | bitchx | weechat-curses
+Suggests: konversation (>> 0.18) | ksirc | xchat, kdialog | xdialog, python
+Replaces: etcskel-kanotix (<< 0.6.47), user-profile-kanotix (<< 0.6.47)
+Description: Start a suitable IRC client to enter #kanotix
+ kanotix-irc provides an easy way to choose a nickname and to enter the
+ #kanotix irc channel.

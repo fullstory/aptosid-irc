@@ -1,0 +1,22 @@
+[Desktop Entry]
+Comment=
+Comment[de]=
+Encoding=UTF-8
+Exec=kanotix-irc
+GenericName=
+GenericName[de]=
+Icon=kanotix-irc
+MimeType=
+Name=IRC Chat #kanotix
+Name[de]=IRC Chat #kanotix
+Path=
+ServiceTypes=
+StartupNotify=true
+SwallowExec=
+SwallowTitle=
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DCOP-ServiceType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
