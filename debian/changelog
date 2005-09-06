@@ -1,3 +1,9 @@
+kanotix-irc (0.2.3) unstable; urgency=low
+
+  * increase font size for konversation.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  6 Sep 2005 14:07:19 +0200
+
 kanotix-irc (0.2.2) unstable; urgency=low
 
   * Replaces user-profile-kanotix (<< 0.6.47).
