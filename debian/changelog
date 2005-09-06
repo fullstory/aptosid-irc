@@ -1,3 +1,9 @@
+kanotix-irc (0.2.4) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  6 Sep 2005 14:09:11 +0200
+
 kanotix-irc (0.2.3) unstable; urgency=low
 
   * increase font size for konversation.
