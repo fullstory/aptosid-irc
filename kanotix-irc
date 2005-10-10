@@ -13,12 +13,13 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
-
+# override tool behaviour through distro-defaults
+FLL_IRC_SERVER="irc.freenode.net"
+FLL_IRC_PORT="6667"
+FLL_IRC_CHANNEL="#kanotix"
+[ -r /etc/default/distro ] && source /etc/default/distro
 
 # define user settings
-SERVER="irc.freenode.net"
-PORT="6667"
-CHANNEL="#kanotix"
 NICK="Web-kanotix$((RANDOM%1000))"
 FALLBACK_USER="$(getent passwd 1000 | cut -d\: -f1)"
 XTERM_OPT="-bg black -fg white -cr red -ls -e"
@@ -85,9 +86,9 @@ function kanotix_irssi () {
 	cat <<_EOF_ >"$IRSSICFG/config"
 servers = (
   {
-    address = "$SERVER";
+    address = "$FLL_IRC_SERVER";
     chatnet = "freenode";
-    port = "$PORT";
+    port = "$FLL_IRC_PORT";
     autoconnect = "yes";
   }
 );
@@ -306,7 +307,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "$CHANNEL";
+        name = "$FLL_IRC_CHANNEL";
         tag = "freenode";
       }
     );
@@ -385,20 +386,20 @@ if [ -z "$DISPLAY" ]; then
 	fi
 
 	[ -x "$WEECHAT" ] && \
-		exec $WEECHAT "irc://$NICK@$SERVER:$PORT/$CHANNEL"
+		exec $WEECHAT "irc://$NICK@$FLL_IRC_SERVER:$FLL_IRC_PORT/$FLL_IRC_CHANNEL"
 
 	[ -x "$BITCHX" ] && \
-		exec "$BITCHX" -c "$CHANNEL" -n "$NICK"
+		exec "$BITCHX" -c "$FLL_IRC_CHANNEL" -n "$NICK"
 else
 	# X11
 	[ -x "$KONVERSATION" ] && \
-		exec "$KONVERSATION" --server "$SERVER" --port "$PORT" --channel "$CHANNEL" --nick "$NICK"
+		exec "$KONVERSATION" --server "$FLL_IRC_SERVER" --port "$FLL_IRC_PORT" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
 
 	[ -x "$KSIRC" ] && \
-		exec "$KSIRC" --server "$SERVER" --channel "$CHANNEL" --nick "$NICK"
+		exec "$KSIRC" --server "$FLL_IRC_SERVER" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
 
 	[ -x "$XCHAT" ] && \
-		exec "$XCHAT" irc://"$SERVER":"$PORT"/"$CHANNEL"
+		exec "$XCHAT" irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
 
 	# nasty fallback, but well - it works ;)
 	exec $XTERMINAL $XTERM_OPT $0 --tty
