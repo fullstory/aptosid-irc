@@ -1,3 +1,9 @@
+kanotix-irc (0.2.6) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 18 Dec 2005 14:06:46 +0100
+
 kanotix-irc (0.2.5) unstable; urgency=low
 
   * update templates for konversation and weechat.
