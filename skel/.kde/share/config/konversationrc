@@ -78,7 +78,6 @@ LogFollowsNick=true
 LowerLog=true
 ReconnectCount=10
 ShowServerList=false
-TabPlacement=1
 
 [General Options]
 AutoWhoContinuousEnabled=true
@@ -133,6 +132,19 @@ Mode=0
 SuffixMiddle=\s
 SuffixStart=:\s
 
+[Notification Messages]
+ChannelListNoServerSelected=true
+ChannelListWarning=true
+ClearLogfileQuestion=true
+CloseQueryAfterIgnore=true
+HideMenuBarWarning=true
+Invitation=true
+LargePaste=true
+QuitServerTab=true
+RemoveDCCReceivedFile=true
+ResumeTransfer=true
+SaveLogfileNote=true
+
 [Notify List]
 NotifyDelay=5
 OnStartup=false
@@ -140,12 +152,12 @@ UseNotify=true
 
 [OSD]
 Alignment=0
-OSDBackgroundColor=000000
+OSDBackgroundColor=#000000
 OSDDrawShadow=false
 OSDDuration=3000
 OSDFont=xft,10,-1,5,50,0,0,0,0,0
 OSDScreen=0
-OSDTextColor=ffffff
+OSDTextColor=#000000
 OSDUseCustomColors=false
 OffsetX=30
 OffsetY=50
@@ -190,6 +202,8 @@ VoiceValue=16
 EmotIconTheme=Default
 EnableEmotIcons=false
 IconTheme=square
+IconThemeIndex=5
+IconThemeName=square
 
 [Web Browser Settings]
 UseKdeDefault=true

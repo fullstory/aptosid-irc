@@ -1,5 +1,6 @@
 #
-# WeeChat configuration file, created by mzilikazi on Sat Jul 16 15:35:03 2005
+# WeeChat configuration file, created by WeeChat v0.1.6 on Sun Dec 18 12:59:16 2005
+# WARNING! Be careful when editing this file, WeeChat writes this file when exiting.
 #
 
 [look]
@@ -7,13 +8,15 @@ look_set_title=on
 look_startup_logo=on
 look_startup_version=on
 look_weechat_slogan=the geekest IRC client!
-look_charset_decode=UTF-8
+look_charset_decode_iso=ISO-8859-1
+look_charset_decode_utf=UTF-8
 look_charset_encode=UTF-8
 look_charset_internal=ISO-8859-1
+look_one_server_buffer=off
 look_buffer_timestamp=[%H:%M:%S]
 look_color_nicks=on
+look_color_nicks_number=10
 look_color_actions=on
-look_remove_colors_from_msgs=on
 look_nicklist=on
 look_nicklist_position=right
 look_nicklist_min_size=0
@@ -22,12 +25,19 @@ look_no_nickname=-cmd-
 look_nickmode=on
 look_nickmode_empty=off
 look_nick_completor=:
+look_nick_completion_ignore=[]-
 look_infobar=on
 look_infobar_timestamp=%A, %B %d %Y
 look_infobar_seconds=on
 look_infobar_delay_highlight=7
+look_hotlist_names_count=3
+look_hotlist_names_level=12
+look_hotlist_names_length=0
+look_day_change=on
+look_day_change_timestamp=%a, %d %b %Y
 
 [colors]
+col_real_white=off
 col_title=default
 col_title_bg=blue
 col_chat=default
@@ -35,6 +45,9 @@ col_chat_time=default
 col_chat_time_sep=brown
 col_chat_prefix1=lightcyan
 col_chat_prefix2=white
+col_chat_server=brown
+col_chat_join=lightgreen
+col_chat_part=lightred
 col_chat_nick=lightcyan
 col_chat_host=cyan
 col_chat_channel=white
@@ -43,6 +56,7 @@ col_chat_highlight=yellow
 col_chat_bg=default
 col_status=default
 col_status_delimiters=cyan
+col_status_channel=white
 col_status_data_msg=yellow
 col_status_private=lightmagenta
 col_status_highlight=lightred
@@ -56,6 +70,7 @@ col_infobar_bg=cyan
 col_input=default
 col_input_channel=white
 col_input_nick=lightgreen
+col_input_delimiters=cyan
 col_input_bg=default
 col_nick=default
 col_nick_away=cyan
@@ -67,6 +82,16 @@ col_nick_voice=yellow
 col_nick_more=lightmagenta
 col_nick_sep=blue
 col_nick_self=white
+col_nick_color1=cyan
+col_nick_color2=magenta
+col_nick_color3=green
+col_nick_color4=brown
+col_nick_color5=lightblue
+col_nick_color6=default
+col_nick_color7=lightcyan
+col_nick_color8=lightmagenta
+col_nick_color9=lightgreen
+col_nick_color10=blue
 col_nick_private=default
 col_nick_bg=default
 col_chat_dcc_selected=white
@@ -95,17 +120,23 @@ irc_display_away=on
 irc_default_msg_away=away
 irc_default_msg_part=WeeChat %v
 irc_default_msg_quit=WeeChat %v
+irc_notice_as_pv=off
 irc_away_check=0
 irc_lag_check=60
 irc_lag_min_show=1
 irc_lag_disconnect=5
 irc_fifo_pipe=off
+irc_highlight=
+irc_colors_receive=on
+irc_colors_send=on
 
 [dcc]
 dcc_auto_accept_files=off
 dcc_auto_accept_chats=off
 dcc_timeout=300
 dcc_blocksize=65536
+dcc_port_range=
+dcc_own_ip=
 dcc_download_path=~
 dcc_upload_path=~
 dcc_convert_spaces=on
@@ -120,6 +151,11 @@ proxy_address=
 proxy_port=3128
 proxy_username=
 proxy_password=
+
+[plugins]
+plugins_path=~/.weechat/plugins
+plugins_autoload=*
+plugins_extension=.so
 
 [keys]
 ctrl-?=backspace
@@ -266,9 +302,12 @@ meta-jmeta-l=jump_last_buffer
 meta-jmeta-s=jump_server
 meta-jmeta-x=jump_next_server
 meta-k=grab_key
+meta-Oa=up_global
+meta-Ob=down_global
 meta-Oc=next_word
 meta-Od=previous_word
 meta-r=delete_line
+meta-s=switch_server
 ctrl-A=home
 ctrl-E=end
 ctrl-H=backspace
@@ -283,32 +322,30 @@ ctrl-W=delete_previous_word
 ctrl-Y=clipboard_paste
 
 [alias]
-SAY=msg *
 BYE=quit
-EXIT=quit
-SIGNOFF=quit
 C=clear
+CHAT=dcc chat
 CL=clear
 CLOSE=buffer close
-CHAT=dcc chat
-# GET=dcc get
-# IG=ignore
+EXIT=quit
 J=join
 K=kick
 KB=kickban
-# KN=knockout
 LEAVE=part
 M=msg
 MUB=unban *
 N=names
 Q=query
+SAY=msg *
+SIGNOFF=quit
 T=topic
 UB=unban
-# UNIG=unignore
 W=who
 WC=part
 WI=whois
 WW=whowas
+
+[ignore]
 
 [server]
 server_name=freenode
@@ -329,3 +366,4 @@ server_command=
 server_command_delay=0
 server_autojoin=kanotix
 server_autorejoin=on
+server_notify_levels=
