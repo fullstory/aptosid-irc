@@ -17,10 +17,11 @@
 FLL_IRC_SERVER="irc.freenode.net"
 FLL_IRC_PORT="6667"
 FLL_IRC_CHANNEL="#kanotix"
+FLL_DISTRO_NAME="Kanotix"
 [ -r /etc/default/distro ] && source /etc/default/distro
 
 # define user settings
-NICK="Web-kanotix$((RANDOM%1000))"
+NICK="Web-${FLL_DISTRO_NAME}$((RANDOM%1000))"
 FALLBACK_USER="$(getent passwd 1000 | cut -d\: -f1)"
 XTERM_OPT="-bg black -fg white -cr red -ls -e"
 
@@ -375,7 +376,7 @@ if [ "`id -u`" == "0" ]; then
 fi
 
 # choose your nick
-NICK=$(inputbox "KANOTIX IRC Chat" "Choose your nick" 50 10 "$NICK") || exit 0
+NICK=$(inputbox "${FLL_DISTRO_NAME} IRC Chat" "Choose your nick" 50 10 "$NICK") || exit 0
 
 # try to start your irc client
 if [ -z "$DISPLAY" ]; then
