@@ -1,3 +1,9 @@
+kanotix-irc (0.2.7) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Mar 2006 02:21:25 +0100
+
 kanotix-irc (0.2.6) unstable; urgency=low
 
   * kanotix --> distro-defaults transition, thanks to x-un-i.
