@@ -1,3 +1,9 @@
+kanotix-irc (0.2.9) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed,  1 Nov 2006 00:15:31 +0100
+
 kanotix-irc (0.2.8) unstable; urgency=low
 
   * fix lintian errors.
