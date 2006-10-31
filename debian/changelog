@@ -1,8 +1,10 @@
-kanotix-irc (0.2.7) UNRELEASED; urgency=low
+kanotix-irc (0.2.7) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * switch to utf-8.
+  * fix lintian errors.
+  * fix weechat presets.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Mar 2006 02:21:25 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed,  1 Nov 2006 00:11:08 +0100
 
 kanotix-irc (0.2.6) unstable; urgency=low
 
