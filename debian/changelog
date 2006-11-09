@@ -1,8 +1,8 @@
-kanotix-irc (0.2.10) UNRELEASED; urgency=low
+kanotix-irc (0.2.10) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix useless bashisms.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  3 Nov 2006 18:39:52 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  9 Nov 2006 20:47:39 +0100
 
 kanotix-irc (0.2.9) unstable; urgency=low
 
