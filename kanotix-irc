@@ -23,7 +23,7 @@ FLL_DISTRO_NAME="Kanotix"
 # define user settings
 NICK="Web-${FLL_DISTRO_NAME}$((RANDOM%1000))"
 FALLBACK_USER="$(getent passwd 1000 | cut -d\: -f1)"
-XTERM_OPT="-bg black -fg white -cr red -ls -e"
+XTERM_OPT="-e"
 
 
 # determine system status
@@ -31,7 +31,7 @@ DIALOG=$(type -p dialog)		|| DIALOG="/usr/bin/dialog"
 KDIALOG=$(type -p kdialog)		|| KDIALOG="/usr/bin/kdialog"
 XDIALOG=$(type -p Xdialog)		|| XDIALOG="/usr/bin/Xdialog"
 SU=$(type -p su)			|| SU="/bin/su"
-XTERMINAL=$(type -p rxvt)		|| XTERMINAL="/usr/bin/rxvt"
+XTERMINAL="x-terminal-emulator" 
 
 BITCHX=$(type -p bitchx)		|| BITCHX="/usr/bin/bitchx"
 IRSSI=$(type -p irssi)			|| IRSSI="/usr/bin/irssi"

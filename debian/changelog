@@ -1,8 +1,9 @@
-kanotix-irc (0.2.11) UNRELEASED; urgency=low
+kanotix-irc (0.2.11) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * use generic x-terminal-emulator support instead of harcoded application,
+    thanks to x-un-i.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  9 Nov 2006 20:48:59 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 16 Nov 2006 22:45:27 +0100
 
 kanotix-irc (0.2.10) unstable; urgency=low
 
