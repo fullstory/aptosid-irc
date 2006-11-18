@@ -8,7 +8,7 @@ Standards-Version: 3.7.2
 Package: kanotix-irc
 Architecture: all
 Depends: dialog, irssi | irssi-text | bitchx | weechat-curses
-Suggests: konversation (>> 0.18) | ksirc | xchat, kdialog | xdialog, python, distro-defaults, xterm | x-terminal-emulator
+Suggests: konversation (>> 0.18) | ksirc | xchat, kdialog | xdialog, python, distro-defaults, xterm | x-terminal-emulator, infobash
 Description: Start a suitable IRC client to enter #kanotix
  kanotix-irc provides an easy way to choose a nickname and to enter the
  #kanotix irc channel.

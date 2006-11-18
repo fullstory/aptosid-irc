@@ -148,11 +148,7 @@ aliases = {
   INVITELIST = "mode $C +I";
   Q = "QUERY";
   QUIT = "foreach window /part;/quit";
-  IBS = "exec -o infobash";
-  IBV = "exec -o infobash -v2";
-  IB = "exec -o infobash -v";
-  GFX = "exec -o awk '/^Section *\"Device\"\\$/,/EndSection/ {if (/^[ \\t]*Driver/) {a[\\$2]++}} /^[ \\t]*(VertR|HorizSy)/{gsub(/#.*|\\t/,\"\",\\$0)\\;b[\\$0]++} END {for (i in a) {print i} for (i in b) {print i}}' /etc/X11/xorg.conf";
-  SND = "exec -o cat /proc/asound/cards /etc/sysconfig/sound"; 
+  INFOBASH = "/exec -o infobash $*";
   X = "QUIT";
 };
 
