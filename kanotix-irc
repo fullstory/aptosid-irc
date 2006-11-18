@@ -41,7 +41,8 @@ WEECHAT=$(type -p weechat-curses)		|| WEECHATE="/usr/bin/weechat-curses"
 XCHAT=$(type -p xchat)				|| XCHAT="/usr/bin/xchat"
 
 # internal functions
-function inputbox {
+inputbox()
+{
 	# inputbox title text width height [init]
 	TITLE="$1"
 	TEXT="$2"
@@ -62,11 +63,12 @@ function inputbox {
 	fi
 }
 
-function kanotix_irssi () {
-	#TERM_TYPE="utf-8"
-	TERM_TYPE="8bit"
+kanotix_irssi()
+{
+	TERM_TYPE="utf-8"
+	#TERM_TYPE="8bit"
 	#IRSSI_OLD="$HOME/.irssi" (This is for when the previous config is copied and mixed with ours, the complicated way)
-	IRSSICFG="/tmp/.irssi$RANDOM"
+	IRSSICFG="mktemp -dp /tmp/ .irssi-XXXXXXXXXX"
 
 	CTCPS=0
 	if [ -e /etc/kanotix-version ]; then
@@ -74,15 +76,6 @@ function kanotix_irssi () {
 	else
 		QUITMSG="http://www.kanotix.com"
 	fi
-
-	if [[ -d $IRSSICFG ]]; then
-		rm -rf "${IRSSICFG}.old"
-		mv "$IRSSICFG" "${IRSSICFG}.old"
-	fi
-	mkdir -p "$IRSSICFG"
-
-	#if [[ -d $IRSSI_OLD ]]; then cp -a $IRSSI_OLD $IRSSICFG ... etcetera
-	# (This is for when the previous config is copied and mixed with ours, the complicated way)
 
 	cat <<_EOF_ >"$IRSSICFG/config"
 servers = (
@@ -320,10 +313,10 @@ _EOF_
 
 	((CTCPS)) && echo 'ignores = ( { level = "CTCPS"; } );' >>"$IRSSICFG/config"
 
-	$IRSSI --home=$IRSSICFG
-	RETC=$?
+	"$IRSSI" --home="$IRSSICFG"
+	RETC="$?"
 	rm -rf "$IRSSICFG"
-	((RETC)) && return 127 || exit 0
+	[ "$RETC" -ne 0 ] && return 127 || exit 0
 }
 
 ##############################################################################
@@ -383,7 +376,7 @@ if [ -z "$DISPLAY" ]; then
 	# tty
 	if [ -x "$IRSSI" ]; then
 		kanotix_irssi
-		exit $?
+		exit "$?"
 	fi
 
 	[ -x "$WEECHAT" ] && \

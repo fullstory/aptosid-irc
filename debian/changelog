@@ -1,8 +1,9 @@
-kanotix-irc (0.2.13) UNRELEASED; urgency=low
+kanotix-irc (0.2.13) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * use POSIX function definitions.
+  * fix insecure tempfile handling.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Nov 2006 02:07:15 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Nov 2006 03:20:22 +0100
 
 kanotix-irc (0.2.12) unstable; urgency=low
 
