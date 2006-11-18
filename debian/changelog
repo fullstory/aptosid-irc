@@ -1,3 +1,9 @@
+kanotix-irc (0.2.16) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 19 Nov 2006 00:37:40 +0100
+
 kanotix-irc (0.2.15) unstable; urgency=low
 
   * use /infobash as common alias for hardware detection in irssi, suggest it.
