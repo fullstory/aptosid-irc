@@ -1,3 +1,9 @@
+kanotix-irc (0.2.13) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Nov 2006 02:07:15 +0100
+
 kanotix-irc (0.2.12) unstable; urgency=low
 
   * brown paper back release, system integrity checks need the full path to
