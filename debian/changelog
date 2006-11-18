@@ -1,13 +1,15 @@
 kanotix-irc (0.2.14) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * a next round of bashism fixes.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Nov 2006 03:21:49 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Nov 2006 03:33:19 +0100
 
 kanotix-irc (0.2.13) unstable; urgency=low
 
   * use POSIX function definitions.
   * fix insecure tempfile handling.
+  * use utf-8 for irssi.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Nov 2006 03:20:22 +0100
 

@@ -18,7 +18,7 @@ FLL_IRC_SERVER="irc.freenode.net"
 FLL_IRC_PORT="6667"
 FLL_IRC_CHANNEL="#kanotix"
 FLL_DISTRO_NAME="Kanotix"
-[ -r /etc/default/distro ] && source /etc/default/distro
+[ -r /etc/default/distro ] && . /etc/default/distro
 
 # define user settings
 NICK="Web-${FLL_DISTRO_NAME}$((RANDOM%1000))"
@@ -67,7 +67,6 @@ kanotix_irssi()
 {
 	TERM_TYPE="utf-8"
 	#TERM_TYPE="8bit"
-	#IRSSI_OLD="$HOME/.irssi" (This is for when the previous config is copied and mixed with ours, the complicated way)
 	IRSSICFG="mktemp -dp /tmp/ .irssi-XXXXXXXXXX"
 
 	CTCPS=0
@@ -311,7 +310,7 @@ windows = {
 mainwindows = { 2 = { first_line = "1"; lines = "47"; }; };
 _EOF_
 
-	((CTCPS)) && echo 'ignores = ( { level = "CTCPS"; } );' >>"$IRSSICFG/config"
+	[ "$CTCPS" -eq 0 ] && echo 'ignores = ( { level = "CTCPS"; } );' >>"$IRSSICFG/config"
 
 	"$IRSSI" --home="$IRSSICFG"
 	RETC="$?"
