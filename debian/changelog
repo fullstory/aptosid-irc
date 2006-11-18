@@ -1,9 +1,8 @@
-kanotix-irc (0.2.14) UNRELEASED; urgency=low
+kanotix-irc (0.2.14) unstable; urgency=low
 
-  * NOT RELEASED YET
-  * a next round of bashism fixes.
+  * fix remaining bashisms, tested in bash, dash, pdksh and posh.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 18 Nov 2006 03:33:19 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 19 Nov 2006 00:10:05 +0100
 
 kanotix-irc (0.2.13) unstable; urgency=low
 
