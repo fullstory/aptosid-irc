@@ -27,18 +27,18 @@ XTERM_OPT="-e"
 
 
 # determine system status
-DIALOG=$(type -p dialog)		|| DIALOG="/usr/bin/dialog"
-KDIALOG=$(type -p kdialog)		|| KDIALOG="/usr/bin/kdialog"
-XDIALOG=$(type -p Xdialog)		|| XDIALOG="/usr/bin/Xdialog"
-SU=$(type -p su)			|| SU="/bin/su"
-XTERMINAL="x-terminal-emulator" 
+DIALOG=$(type -p dialog)			|| DIALOG="/usr/bin/dialog"
+KDIALOG=$(type -p kdialog)			|| KDIALOG="/usr/bin/kdialog"
+XDIALOG=$(type -p Xdialog)			|| XDIALOG="/usr/bin/Xdialog"
+SU=$(type -p su)				|| SU="/bin/su"
+XTERMINAL="$(type -p x-terminal-emulator)"	|| XTERMINAL="/usr/bin/x-terminal-emulator"
 
-BITCHX=$(type -p bitchx)		|| BITCHX="/usr/bin/bitchx"
-IRSSI=$(type -p irssi)			|| IRSSI="/usr/bin/irssi"
-KSIRC=$(type -p ksirc)			|| KSIRC="/usr/bin/ksirc"
-KONVERSATION=$(type -p konversation)	|| KONVERSATION="/usr/bin/konversation"
-WEECHAT=$(type -p weechat-curses)	|| WEECHATE="/usr/bin/weechat-curses"
-XCHAT=$(type -p xchat)			|| XCHAT="/usr/bin/xchat"
+BITCHX=$(type -p bitchx)			|| BITCHX="/usr/bin/bitchx"
+IRSSI=$(type -p irssi)				|| IRSSI="/usr/bin/irssi"
+KSIRC=$(type -p ksirc)				|| KSIRC="/usr/bin/ksirc"
+KONVERSATION=$(type -p konversation)		|| KONVERSATION="/usr/bin/konversation"
+WEECHAT=$(type -p weechat-curses)		|| WEECHATE="/usr/bin/weechat-curses"
+XCHAT=$(type -p xchat)				|| XCHAT="/usr/bin/xchat"
 
 # internal functions
 function inputbox {
