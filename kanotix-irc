@@ -30,6 +30,7 @@ XTERM_OPT="-e"
 DIALOG="$(which dialog)"			|| DIALOG="/usr/bin/dialog"
 KDIALOG="$(which kdialog)"			|| KDIALOG="/usr/bin/kdialog"
 XDIALOG="$(which Xdialog)"			|| XDIALOG="/usr/bin/Xdialog"
+MKTEMP="$(which mktemp)"			|| XTERMINAL="/bin/mktemp"
 SU="$(which su)"				|| SU="/bin/su"
 XTERMINAL="$(which x-terminal-emulator)"	|| XTERMINAL="/usr/bin/x-terminal-emulator"
 
@@ -67,7 +68,7 @@ kanotix_irssi()
 {
 	TERM_TYPE="utf-8"
 	#TERM_TYPE="8bit"
-	IRSSICFG="mktemp -dp /tmp/ .irssi-XXXXXXXXXX"
+	IRSSICFG="$($MKTEMP -dp /tmp/ .irssi-XXXXXXXXXX)"
 
 	CTCPS=0
 	if [ -e /etc/kanotix-version ]; then
