@@ -72,7 +72,7 @@ kanotix_irssi()
 
 	CTCPS=0
 	if [ -e /etc/kanotix-version ]; then
-		QUITMSG="$(< /etc/kanotix-version) | http://www.kanotix.com"
+		QUITMSG="$(cat /etc/kanotix-version) | http://www.kanotix.com"
 	else
 		QUITMSG="http://www.kanotix.com"
 	fi
