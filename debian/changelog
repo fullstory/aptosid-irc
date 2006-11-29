@@ -1,8 +1,8 @@
-kanotix-irc (0.2.17) UNRELEASED; urgency=low
+sidux-irc (0.3.0) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * move over to sidux.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 21 Nov 2006 16:36:50 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 29 Nov 2006 17:04:43 +0100
 
 kanotix-irc (0.2.16) unstable; urgency=low
 

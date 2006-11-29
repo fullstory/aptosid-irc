@@ -2,13 +2,13 @@
 Comment=
 Comment[de]=
 Encoding=UTF-8
-Exec=kanotix-irc
+Exec=sidux-irc
 GenericName=
 GenericName[de]=
-Icon=kanotix-irc
+Icon=sidux-irc
 MimeType=
-Name=IRC Chat #kanotix
-Name[de]=IRC Chat #kanotix
+Name=IRC Chat #sidux
+Name[de]=IRC Chat #sidux
 Path=
 ServiceTypes=
 StartupNotify=true

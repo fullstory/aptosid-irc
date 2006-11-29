@@ -41,7 +41,7 @@ Button6=Part,/PART %c bus error%n
 Button7=Quit,/QUIT core dumped.%n
 
 [Channel 0]
-Name=#kanotix
+Name=#sidux
 Password=
 
 [DCC Settings]
@@ -177,7 +177,7 @@ LogfilePath=$HOME/.kde/share/apps/konversation/logs
 [Server 0]
 Port=6667
 SSLEnabled=false
-Server=irc.freenode.org
+Server=irc.oftc.net
 
 [ServerGroup 0]
 AutoConnect=true
@@ -185,7 +185,7 @@ AutoJoinChannels=Channel 0
 ConnectCommands=
 EnableNotifications=true
 Group=
-Name=Freenode
+Name=oftc
 ServerList=Server 0
 
 [Sort Nicknames]

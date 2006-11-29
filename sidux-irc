@@ -1,5 +1,4 @@
 #!/bin/sh
-# Copyright (C) 2003 Jörg Schirottke <master@kanotix.com>
 # Copyright (C) 2005 Michiel Lieuwe de Boer
 # Copyright (C) 2005-2006 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 
@@ -14,10 +13,10 @@
 # GNU General Public License for more details.
 
 # override tool behaviour through distro-defaults
-FLL_IRC_SERVER="irc.freenode.net"
+FLL_IRC_SERVER="irc.oftc.net"
 FLL_IRC_PORT="6667"
-FLL_IRC_CHANNEL="#kanotix"
-FLL_DISTRO_NAME="Kanotix"
+FLL_IRC_CHANNEL="#sidux"
+FLL_DISTRO_NAME="Sidux"
 [ -r /etc/default/distro ] && . /etc/default/distro
 
 # define user settings
@@ -64,31 +63,31 @@ inputbox()
 	fi
 }
 
-kanotix_irssi()
+fll_irssi()
 {
 	TERM_TYPE="utf-8"
 	#TERM_TYPE="8bit"
 	IRSSICFG="$($MKTEMP -dp /tmp/ .irssi-XXXXXXXXXX)"
 
 	CTCPS=0
-	if [ -e /etc/kanotix-version ]; then
-		QUITMSG="$(cat /etc/kanotix-version) | http://www.kanotix.com"
+	if [ -e /etc/sidux-version ]; then
+		QUITMSG="$(cat /etc/sidux-version) | http://sidux.com"
 	else
-		QUITMSG="http://www.kanotix.com"
+		QUITMSG="http://sidux.com"
 	fi
 
 	cat <<_EOF_ >"$IRSSICFG/config"
 servers = (
   {
     address = "$FLL_IRC_SERVER";
-    chatnet = "freenode";
+    chatnet = "oftc";
     port = "$FLL_IRC_PORT";
     autoconnect = "yes";
   }
 );
 
 chatnets = {
-  freenode = {
+  oftc = {
     type = "IRC";
     max_kicks = "4";
     max_modes = "4";
@@ -98,11 +97,11 @@ chatnets = {
 };
 
 channels = (
-  { name = "#kanotix"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "$FLL_IRC_CHANNEL"; chatnet = "oftc"; autojoin = "yes"; }
 );
 _EOF_
 
-	# See also special kanotix aliases in here, like "/IBS", "/IBV", "/IB", "/GFX", "/SND", and "/X"
+	# See also special sidux aliases in here, like "/IBS", "/IBV", "/IB", "/GFX", "/SND", and "/X"
 	cat <<"_EOF_" >>"$IRSSICFG/config"
 aliases = {
   J = "join";
@@ -269,8 +268,8 @@ _EOF_
 	cat <<_EOF_ >>"$IRSSICFG/config"
 settings = {
   core = {
-    real_name = "Kanotix user";
-    user_name = "kanotix";
+    real_name = "Sidux user";
+    user_name = "sidux";
     nick = "$NICK";
     quit_message = "$QUITMSG";
   };
@@ -297,7 +296,7 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "$FLL_IRC_CHANNEL";
-        tag = "freenode";
+        tag = "oftc";
       }
     );
   };
@@ -370,7 +369,7 @@ NICK=$(inputbox "${FLL_DISTRO_NAME} IRC Chat" "Choose your nick" 50 10 "$NICK") 
 if [ -z "$DISPLAY" ]; then
 	# tty
 	if [ -x "$IRSSI" ]; then
-		kanotix_irssi
+		fll_irssi
 		exit "$?"
 	fi
 
