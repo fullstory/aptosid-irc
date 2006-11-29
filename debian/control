@@ -10,6 +10,7 @@ Architecture: all
 Depends: dialog, irssi | irssi-text | bitchx | weechat-curses
 Suggests: konversation (>> 0.18) | ksirc | xchat, kdialog | xdialog, python, distro-defaults, xterm | x-terminal-emulator, infobash
 Conflicts: kanotix-irc
+Replaces: kanotix-irc
 Description: Start a suitable IRC client to enter #sidux
  sidux-irc provides an easy way to choose a nickname and to enter the
  #sidux irc channel.

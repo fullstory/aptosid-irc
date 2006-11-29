@@ -1,3 +1,9 @@
+sidux-irc (0.3.1) unstable; urgency=low
+
+  * we've to replace kanotix-irc as well.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 29 Nov 2006 17:19:58 +0100
+
 sidux-irc (0.3.0) unstable; urgency=low
 
   * move over to sidux.
