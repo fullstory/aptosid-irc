@@ -16,7 +16,7 @@
 FLL_IRC_SERVER="irc.oftc.net"
 FLL_IRC_PORT="6667"
 FLL_IRC_CHANNEL="#sidux"
-FLL_DISTRO_NAME="Sidux"
+FLL_DISTRO_NAME="sidux"
 [ -r /etc/default/distro ] && . /etc/default/distro
 
 # define user settings
@@ -268,7 +268,7 @@ _EOF_
 	cat <<_EOF_ >>"$IRSSICFG/config"
 settings = {
   core = {
-    real_name = "Sidux user";
+    real_name = "sidux user";
     user_name = "sidux";
     nick = "$NICK";
     quit_message = "$QUITMSG";
