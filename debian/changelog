@@ -1,8 +1,9 @@
 sidux-irc (0.3.3) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * all user profile files go to /usr/share/user-profile
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  5 Dec 2006 13:50:17 +0100
+ -- Joaquim Boura <x-un-i@sidux.com>  Sat, 23 Dec 2006 12:53:18 +0100
 
 sidux-irc (0.3.2) unstable; urgency=low
 
