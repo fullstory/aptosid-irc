@@ -1,9 +1,13 @@
-sidux-irc (0.3.3) UNRELEASED; urgency=low
+sidux-irc (0.3.3) unstable; urgency=low
 
-  * NOT RELEASED YET
-  * all user profile files go to /usr/share/user-profile
+  [ Joaquim Boura ]
+  * all user profile files go to /usr/share/user-profile/.
 
- -- Joaquim Boura <x-un-i@sidux.com>  Sat, 23 Dec 2006 12:53:18 +0100
+  [ Stefan Lippers-Hollmann ]
+  * remove black theme from xchat.
+  * remove /usr/share/user-profile/.xchat2/, not needed anymore.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 26 Dec 2006 13:51:47 +0100
 
 sidux-irc (0.3.2) unstable; urgency=low
 
