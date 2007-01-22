@@ -1,8 +1,8 @@
-sidux-irc (0.3.6) UNRELEASED; urgency=low
+sidux-irc (0.3.6) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * introduce new sidux icons.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  2 Jan 2007 15:14:41 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 22 Jan 2007 11:53:05 +0100
 
 sidux-irc (0.3.5) unstable; urgency=low
 
