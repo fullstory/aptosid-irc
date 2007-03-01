@@ -1,8 +1,8 @@
-sidux-irc (0.3.7) UNRELEASED; urgency=low
+sidux-irc (0.3.7) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * kanotix-irc was never part of sidux or debian, don't conflict with it.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 22 Jan 2007 11:55:00 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  1 Mar 2007 18:20:38 +0100
 
 sidux-irc (0.3.6) unstable; urgency=low
 
