@@ -1,4 +1,4 @@
 sidux-irc usr/bin/
 skel etc/
-skel/Desktop/*.desktop usr/share/applnk/Internet/
+*.desktop usr/share/applications
 hicolor usr/share/icons/
