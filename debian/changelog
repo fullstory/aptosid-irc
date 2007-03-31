@@ -1,3 +1,9 @@
+sidux-irc (0.3.10) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 31 Mar 2007 21:48:08 +0200
+
 sidux-irc (0.3.9) unstable; urgency=low
 
   * specify Categorie as sidux;Net, thanks to dedo for noticing.
