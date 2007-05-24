@@ -387,7 +387,7 @@ else
 		exec "$KSIRC" --server "$FLL_IRC_SERVER" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
 
 	[ -x "$XCHAT" ] && \
-		exec "$XCHAT" irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
+		exec "$XCHAT" --url=irc://$NICK@"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
 
 	# nasty fallback, but well - it works ;)
 	exec $XTERMINAL $XTERM_OPT $0 --tty
