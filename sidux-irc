@@ -386,8 +386,20 @@ else
 	[ -x "$KSIRC" ] && \
 		exec "$KSIRC" --server "$FLL_IRC_SERVER" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
 
-	[ -x "$XCHAT" ] && \
-		exec "$XCHAT" --url=irc://$NICK@"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
+	if [ -x "$XCHAT" ]; then
+		if [ ! -f "/home/$USERNAME/.xchat2/xchat.conf" ]; then
+			rm -rf /home/$USERNAME/.xchat2
+			mkdir -p /home/$USERNAME/.xchat2
+			touch /home/$USERNAME/.xchat2/xchat.conf
+			echo "irc_nick1 = $NICK" >> /home/$USERNAME/.xchat2/xchat.conf
+			echo "irc_nick2 = $NICK_" >> /home/$USERNAME/.xchat2/xchat.conf
+			echo "irc_nick3 = $NICK__" >> /home/$USERNAME/.xchat2/xchat.conf
+			echo "irc_user_name = $NICK" >> /home/$USERNAME/.xchat2/xchat.conf
+			echo "irc_real_name = $NICK" >> /home/$USERNAME/.xchat2/xchat.conf
+			echo "tab_layout = 0" >> /home/$USERNAME/.xchat2/xchat.conf
+			exec "$XCHAT" --url=irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
+		fi
+	fi
 
 	# nasty fallback, but well - it works ;)
 	exec $XTERMINAL $XTERM_OPT $0 --tty
