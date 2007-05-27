@@ -1,9 +1,5 @@
-sidux-irc (0.3.11) UNRELEASED; urgency=low
+sidux-irc (0.3.11) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Andreas Weber ]
   * xchat Function fixed. 
 
  -- Andreas Weber <andreas@it-weber.com>  Sun, 27 May 2007 15:27:03 +0200
