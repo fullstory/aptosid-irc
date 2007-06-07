@@ -1,4 +1,4 @@
-sidux-irc (0.3.12) UNRELEASED; urgency=low
+sidux-irc (0.3.12) unstable; urgency=low
 
   * Purge .kde from /etc/skel.
 
