@@ -1,4 +1,4 @@
-sidux-irc (0.3.13) UNRELEASED; urgency=low
+sidux-irc (0.3.13) unstable; urgency=low
 
   * Add debian menu entry.
   * Fix for non-standard icon location.
