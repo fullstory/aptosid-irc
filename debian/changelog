@@ -1,3 +1,9 @@
+sidux-irc (0.3.14) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 17 Jun 2007 16:10:17 +0200
+
 sidux-irc (0.3.13) unstable; urgency=low
 
   * Add debian menu entry.
