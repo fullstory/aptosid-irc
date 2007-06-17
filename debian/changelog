@@ -1,8 +1,9 @@
 sidux-irc (0.3.13) UNRELEASED; urgency=low
 
   * Add debian menu entry.
+  * Fix for non-standard icon location.
 
- -- Kel Modderman <kel@otaku42.de>  Sun, 17 Jun 2007 11:17:56 +1000
+ -- Kel Modderman <kel@otaku42.de>  Sun, 17 Jun 2007 11:25:19 +1000
 
 sidux-irc (0.3.12) unstable; urgency=low
 

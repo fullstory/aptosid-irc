@@ -4,7 +4,7 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 
 install/sidux-irc::
 	mkdir -p debian/sidux-irc/usr/share/pixmaps
-	convert icons/hicolor/32x32/apps/sidux-irc.png \
+	convert hicolor/32x32/apps/sidux-irc.png \
 		debian/sidux-irc/usr/share/pixmaps/sidux-irc.xpm
-	convert icons/hicolor/16x16/apps/sidux-irc.png \
+	convert hicolor/16x16/apps/sidux-irc.png \
 		debian/sidux-irc/usr/share/pixmaps/sidux-irc-16.xpm
