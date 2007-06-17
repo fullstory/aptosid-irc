@@ -1,0 +1,7 @@
+?package(sidux-irc):needs="text" \
+	section="Apps/Net" \
+	hints="sidux,Net" \
+	title="IRC Chat #sidux" \
+	icon32x32="/usr/share/pixmaps/sidux-irc.xpm" \
+	icon16x16="/usr/share/pixmaps/sidux-irc-16.xpm" \
+	command="sidux-irc"
