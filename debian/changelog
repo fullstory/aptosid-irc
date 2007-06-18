@@ -1,8 +1,9 @@
 sidux-irc (0.3.14) UNRELEASED; urgency=low
 
   * debian/sidux-irc.menu: depend on X11 for now.
+  * Remove ./skel/.weechat.
 
- -- Kel Modderman <kel@otaku42.de>  Mon, 18 Jun 2007 23:08:20 +1000
+ -- Kel Modderman <kel@otaku42.de>  Mon, 18 Jun 2007 23:10:54 +1000
 
 sidux-irc (0.3.13) unstable; urgency=low
 
