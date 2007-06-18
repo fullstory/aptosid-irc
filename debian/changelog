@@ -1,8 +1,8 @@
 sidux-irc (0.3.14) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * debian/sidux-irc.menu: depend on X11 for now.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 17 Jun 2007 16:10:17 +0200
+ -- Kel Modderman <kel@otaku42.de>  Mon, 18 Jun 2007 23:08:20 +1000
 
 sidux-irc (0.3.13) unstable; urgency=low
 
