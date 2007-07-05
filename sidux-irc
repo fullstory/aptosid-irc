@@ -28,7 +28,7 @@ XTERM_OPT="-e"
 # determine system status
 DIALOG="$(which dialog)"			|| DIALOG="/usr/bin/dialog"
 KDIALOG="$(which kdialog)"			|| KDIALOG="/usr/bin/kdialog"
-XDIALOG="$(which Xdialog)"			|| XDIALOG="/usr/bin/Xdialog"
+ZENITY="$(which zenity)"			|| XDIALOG="/usr/bin/zenity"
 MKTEMP="$(which mktemp)"			|| XTERMINAL="/bin/mktemp"
 SU="$(which su)"				|| SU="/bin/su"
 XTERMINAL="$(which x-terminal-emulator)"	|| XTERMINAL="/usr/bin/x-terminal-emulator"
@@ -54,8 +54,8 @@ inputbox()
 		if [ -x "$KDIALOG" ]; then
 			"$KDIALOG" --title "$TITLE" --inputbox "$TEXT" "$NICK"
 		else
-			if [ -x "$XDIALOG" ]; then
-				"$XDIALOG" --title "$TITLE" --inputbox "$TEXT" $HEIGHT $WIDTH "$INIT"
+			if [ -x "$ZENITY" ]; then
+				"$ZENITY"  --title "$TITLE" --entry --text "$TEXT" --entry-text="$INIT"
 			fi
 		fi		
 	else
@@ -326,7 +326,7 @@ if [ -z "$DISPLAY" ]; then
 		fi
 	done
 else
-	for i in "$DIALOG" "$XDIALOG" "$XTERMINAL" "$SU"; do
+	for i in "$DIALOG" "$ZENITY" "$XTERMINAL" "$SU"; do
 		if [ ! -x "$i" ]; then
 			echo "$i: missing, terminate abnormally"
 			exit 998
@@ -387,7 +387,7 @@ else
 		exec "$KSIRC" --server "$FLL_IRC_SERVER" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
 
 	if [ -x "$XCHAT" ]; then
-		if [ ! -f "/home/$USERNAME/.xchat2/xchat.conf" ]; then
+		#if [ ! -f "/home/$USERNAME/.xchat2/xchat.conf" ]; then
 			rm -rf /home/$USERNAME/.xchat2
 			mkdir -p /home/$USERNAME/.xchat2
 			touch /home/$USERNAME/.xchat2/xchat.conf
@@ -398,7 +398,7 @@ else
 			echo "irc_real_name = $NICK" >> /home/$USERNAME/.xchat2/xchat.conf
 			echo "tab_layout = 0" >> /home/$USERNAME/.xchat2/xchat.conf
 			exec "$XCHAT" --url=irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
-		fi
+		#fi
 	fi
 
 	# nasty fallback, but well - it works ;)
@@ -407,7 +407,7 @@ fi
 
 # Oops...
 echo "ERROR: failed to start any suitable IRC Client"
-for i in "$DIALOG" "$XDIALOG" "$BITCHX" "$IRSSI" "$KSIRC" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
+for i in "$DIALOG" "$ZENITY" "$BITCHX" "$IRSSI" "$KSIRC" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
 	if [ -x "$i" ]; then
 		echo "$i: found."
 	else
