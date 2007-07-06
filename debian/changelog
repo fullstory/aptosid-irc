@@ -1,9 +1,9 @@
-sidux-irc (0.3.17) UNRELEASED; urgency=low
+sidux-irc (0.4.0) unstable; urgency=low
 
-  * NOT RELEASED YET
-  * suggest Xdialog again.
+  * switch to ssft.
+  * clean up sidux-irc.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 07 Jul 2007 00:07:40 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 07 Jul 2007 00:48:57 +0200
 
 sidux-irc (0.3.16) unstable; urgency=low
 

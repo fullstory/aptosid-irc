@@ -1,6 +1,6 @@
 #!/bin/sh
 # Copyright (C) 2005 Michiel Lieuwe de Boer
-# Copyright (C) 2005-2006 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+# Copyright (C) 2005-2007 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -21,16 +21,12 @@ FLL_DISTRO_NAME="sidux"
 
 # define user settings
 NICK="Web-${FLL_DISTRO_NAME}$(mawk 'BEGIN{print int(1000 * rand())}')"
-FALLBACK_USER="$(getent passwd 1000 | cut -d\: -f1)"
 XTERM_OPT="-e"
 
 
 # determine system status
-DIALOG="$(which dialog)"			|| DIALOG="/usr/bin/dialog"
-KDIALOG="$(which kdialog)"			|| KDIALOG="/usr/bin/kdialog"
-XDIALOG="$(which Xdialog)"			|| XDIALOG="/usr/bin/Xdialog"
-ZENITY="$(which zenity)"			|| ZENITY="/usr/bin/zenity"
 MKTEMP="$(which mktemp)"			|| MKTEMP="/bin/mktemp"
+SSFTSH="$(which ssft.sh)"			|| SSFTSH="/usr/bin/ssft.sh"
 SU="$(which su)"				|| SU="/bin/su"
 XTERMINAL="$(which x-terminal-emulator)"	|| XTERMINAL="/usr/bin/x-terminal-emulator"
 
@@ -42,30 +38,6 @@ WEECHAT="$(which weechat-curses)"		|| WEECHAT="/usr/bin/weechat-curses"
 XCHAT="$(which xchat)"				|| XCHAT="/usr/bin/xchat"
 
 # internal functions
-inputbox()
-{
-	# inputbox title text width height [init]
-	TITLE="$1"
-	TEXT="$2"
-	WIDTH="$3"
-	HEIGHT="$4"
-	INIT="$5"
-	
-	if [ -n "$DISPLAY" ]; then
-		if [ -x "$KDIALOG" ]; then
-			"$KDIALOG" --title "$TITLE" --inputbox "$TEXT" "$NICK"
-		elif [ -x "$ZENITY" ]; then
-			"$ZENITY"  --title "$TITLE" --entry --text "$TEXT" --entry-text="$INIT"
-		elif [ -x "$XDIALOG" ]; then
-			"$XDIALOG" --title "$TITLE" --inputbox "$TEXT" $HEIGHT $WIDTH
-		else
-			"$XTERMINAL" $XTERM_OPT "$DIALOG" --stdout --title "$TITLE" --inputbox "$TEXT" $HEIGHT $WIDTH "$INIT"
-		fi		
-	else
-		"$DIALOG" --stdout --title "$TITLE" --inputbox "$TEXT" $HEIGHT $WIDTH "$INIT"
-	fi
-}
-
 fll_irssi()
 {
 	TERM_TYPE="utf-8"
@@ -322,42 +294,28 @@ _EOF_
 
 # yes, this stuff is elementary
 if [ -z "$DISPLAY" ]; then
-	for i in "$DIALOG" "$SU"; do
+	for i in "$SSFTSH" "$SU"; do
 		if [ ! -x "$i" ]; then
 			echo "$i: missing, terminate abnormally"		1>&2
 			exit 999
 		fi
 	done
 else
-	for i in "$DIALOG" "$XTERMINAL" "$SU"; do
+	for i in "$SSFTSH" "$XTERMINAL" "$SU"; do
 		if [ ! -x "$i" ]; then
 			echo "$i: missing, terminate abnormally"		1>&2
 			exit 998
 		fi
 	done
-
-	if [ ! -x "$KDIALOG" ] && [ ! -x "$XDIALOG" ] && [ ! -x "$ZENITY" ]; then
-		if [ -x "$XTERMINAL" ]; then
-			echo "WARNING: no supported X11 dialog frontend:"	1>&2
-			echo "- $KDIALOG"					1>&2
-			echo "- $XDIALOG"					1>&2
-			echo "- $ZENITY"					1>&2
-			echo "installed, fall back to dialog and $XTERMINAL."	1>&2
-		else
-			echo "ERROR: no supported X11 dialog frontend:"		1>&2
-			echo "- $KDIALOG"					1>&2
-			echo "- $XDIALOG"					1>&2
-			echo "- $ZENITY"					1>&2
-			echo "- $XTERMINAL"					1>&2
-			echo "installed, terminate abnormally."			1>&2
-			exit 990
-		fi
-	fi
 fi
 
 if [ "$1" = "--tty" ]; then
 	DISPLAY=""
 fi
+
+# initialize ssft
+. "$SSFTSH"
+[ -n "$SSFT_FRONTEND" ] ||  SSFT_FRONTEND="$(ssft_choose_frontend)"
 
 # are you insane?
 if [ "`id -u`" = "0" ]; then
@@ -365,26 +323,17 @@ if [ "`id -u`" = "0" ]; then
 	echo ""									1>&2
 	echo "Don't ever call any IRC client as root"				1>&2
 
-	if [ -z "$FALLBACK" ]; then
-		# yes, you deserve it - and I'm to lazy to enhance su-me's features ;)
-		echo "Employ fallback and start IRC as $FALLBACK_USER."		1>&2
-		if [ -n "$DISPLAY" ]; then
-			exec $XTERMINAL $XTERM_OPT $SU -c "$0 --tty" "$FALLBACK_USER"
-		else
-			exec $SU -c "$0 --tty" "$FALLBACK_USER"
-		fi
-	else
-		exit 996
+	if [ -n "$DISPLAY" ]; then
+		ssft_display_message "ERROR" "ROOOOOOOOOOOOT has landed!\n\nDon't ever call any IRC client as root"
 	fi
 
-	if [ "`id -u`" = "0" ]; then
-		echo "you had your chance, I'm not going to start any IRC client as root"	1>&2
-		exit 997
-	fi
+	exit 996
 fi
 
 # choose your nick
-NICK=$(inputbox "${FLL_DISTRO_NAME} IRC Chat" "Choose your nick" 50 10 "$NICK") || exit 0
+SSFT_DEFAULT="$NICK"
+ssft_read_string "${FLL_DISTRO_NAME} IRC Chat" "Choose your nick" || exit 0
+NICK="$SSFT_RESULT"
 
 # try to start your irc client
 if [ -z "$DISPLAY" ]; then
@@ -437,7 +386,7 @@ fi
 
 # Oops...
 echo "ERROR: failed to start any suitable IRC Client"				1>&2
-for i in "$DIALOG" "$KDIALOG" "$XDIALOG" "$ZENITY" "$BITCHX" "$IRSSI" "$KSIRC" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
+for i in "$SSFTSH" "$BITCHX" "$IRSSI" "$KSIRC" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
 	if [ -x "$i" ]; then
 		echo "$i: found."
 	else
