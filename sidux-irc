@@ -28,8 +28,9 @@ XTERM_OPT="-e"
 # determine system status
 DIALOG="$(which dialog)"			|| DIALOG="/usr/bin/dialog"
 KDIALOG="$(which kdialog)"			|| KDIALOG="/usr/bin/kdialog"
-ZENITY="$(which zenity)"			|| XDIALOG="/usr/bin/zenity"
-MKTEMP="$(which mktemp)"			|| XTERMINAL="/bin/mktemp"
+XDIALOG="$(which Xdialog)"			|| XDIALOG="/usr/bin/Xdialog"
+ZENITY="$(which zenity)"			|| ZENITY="/usr/bin/zenity"
+MKTEMP="$(which mktemp)"			|| MKTEMP="/bin/mktemp"
 SU="$(which su)"				|| SU="/bin/su"
 XTERMINAL="$(which x-terminal-emulator)"	|| XTERMINAL="/usr/bin/x-terminal-emulator"
 
@@ -53,10 +54,12 @@ inputbox()
 	if [ -n "$DISPLAY" ]; then
 		if [ -x "$KDIALOG" ]; then
 			"$KDIALOG" --title "$TITLE" --inputbox "$TEXT" "$NICK"
+		elif [ -x "$ZENITY" ]; then
+			"$ZENITY"  --title "$TITLE" --entry --text "$TEXT" --entry-text="$INIT"
+		elif [ -x "$XDIALOG" ]; then
+			"$XDIALOG" --title "$TITLE" --inputbox "$TEXT" $HEIGHT $WIDTH
 		else
-			if [ -x "$ZENITY" ]; then
-				"$ZENITY"  --title "$TITLE" --entry --text "$TEXT" --entry-text="$INIT"
-			fi
+			"$XTERMINAL" $XTERM_OPT "$DIALOG" --stdout --title "$TITLE" --inputbox "$TEXT" $HEIGHT $WIDTH "$INIT"
 		fi		
 	else
 		"$DIALOG" --stdout --title "$TITLE" --inputbox "$TEXT" $HEIGHT $WIDTH "$INIT"
@@ -321,17 +324,35 @@ _EOF_
 if [ -z "$DISPLAY" ]; then
 	for i in "$DIALOG" "$SU"; do
 		if [ ! -x "$i" ]; then
-			echo "$i: missing, terminate abnormally"
+			echo "$i: missing, terminate abnormally"		1>&2
 			exit 999
 		fi
 	done
 else
-	for i in "$DIALOG" "$ZENITY" "$XTERMINAL" "$SU"; do
+	for i in "$DIALOG" "$XTERMINAL" "$SU"; do
 		if [ ! -x "$i" ]; then
-			echo "$i: missing, terminate abnormally"
+			echo "$i: missing, terminate abnormally"		1>&2
 			exit 998
 		fi
 	done
+
+	if [ ! -x "$KDIALOG" ] && [ ! -x "$XDIALOG" ] && [ ! -x "$ZENITY" ]; then
+		if [ -x "$XTERMINAL" ]; then
+			echo "WARNING: no supported X11 dialog frontend:"	1>&2
+			echo "- $KDIALOG"					1>&2
+			echo "- $XDIALOG"					1>&2
+			echo "- $ZENITY"					1>&2
+			echo "installed, fall back to dialog and $XTERMINAL."	1>&2
+		else
+			echo "ERROR: no supported X11 dialog frontend:"		1>&2
+			echo "- $KDIALOG"					1>&2
+			echo "- $XDIALOG"					1>&2
+			echo "- $ZENITY"					1>&2
+			echo "- $XTERMINAL"					1>&2
+			echo "installed, terminate abnormally."			1>&2
+			exit 990
+		fi
+	fi
 fi
 
 if [ "$1" = "--tty" ]; then
@@ -340,13 +361,13 @@ fi
 
 # are you insane?
 if [ "`id -u`" = "0" ]; then
-	echo "ROOOOOOOOOOOOT has landed!"
-	echo ""
-	echo "Don't ever call any IRC client as root"
+	echo "ROOOOOOOOOOOOT has landed!"					1>&2
+	echo ""									1>&2
+	echo "Don't ever call any IRC client as root"				1>&2
 
 	if [ -z "$FALLBACK" ]; then
 		# yes, you deserve it - and I'm to lazy to enhance su-me's features ;)
-		echo "Employ fallback and start IRC as $FALLBACK_USER."
+		echo "Employ fallback and start IRC as $FALLBACK_USER."		1>&2
 		if [ -n "$DISPLAY" ]; then
 			exec $XTERMINAL $XTERM_OPT $SU -c "$0 --tty" "$FALLBACK_USER"
 		else
@@ -357,7 +378,7 @@ if [ "`id -u`" = "0" ]; then
 	fi
 
 	if [ "`id -u`" = "0" ]; then
-		echo "you had your chance, I'm not going to start any IRC client as root"
+		echo "you had your chance, I'm not going to start any IRC client as root"	1>&2
 		exit 997
 	fi
 fi
@@ -415,12 +436,12 @@ else
 fi
 
 # Oops...
-echo "ERROR: failed to start any suitable IRC Client"
-for i in "$DIALOG" "$ZENITY" "$BITCHX" "$IRSSI" "$KSIRC" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
+echo "ERROR: failed to start any suitable IRC Client"				1>&2
+for i in "$DIALOG" "$KDIALOG" "$XDIALOG" "$ZENITY" "$BITCHX" "$IRSSI" "$KSIRC" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
 	if [ -x "$i" ]; then
 		echo "$i: found."
 	else
-		echo "$i: NOT found."
+		echo "$i: NOT found."						1>&2
 	fi
 done
 
