@@ -4,9 +4,10 @@ sidux-irc (0.3.15) UNRELEASED; urgency=low
   * NOT RELEASED YET
 
   [ Horst Tritremmel ]
-  * Xdialog to zenity replaced, Xdialog doesn't work in gnome 
+  * Xdialog to zenity replaced, Xdialog doesn't work in gnome
+  * xchat part updated 
 
- -- Horst Tritremmel <hjt@sidux.com>  Thu, 05 Jul 2007 22:27:36 +0200
+ -- Horst Tritremmel <hjt@sidux.com>  Fri, 06 Jul 2007 10:08:02 +0200
 
 sidux-irc (0.3.14) unstable; urgency=low
 
