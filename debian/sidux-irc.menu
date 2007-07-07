@@ -1,4 +1,5 @@
-?package(sidux-irc):needs="text" \
+?package(sidux-irc): \
+	needs="X11" \
 	section="Apps/Net" \
 	hints="sidux,Net" \
 	title="IRC Chat #sidux" \

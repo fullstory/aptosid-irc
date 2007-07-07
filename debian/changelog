@@ -1,8 +1,8 @@
-sidux-irc (0.4.1) UNRELEASED; urgency=low
+sidux-irc (0.4.1) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix debian menu entry.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 07 Jul 2007 00:50:59 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 07 Jul 2007 14:04:29 +0200
 
 sidux-irc (0.4.0) unstable; urgency=low
 
