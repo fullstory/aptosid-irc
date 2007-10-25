@@ -1,11 +1,13 @@
-sidux-irc (0.4.2) UNRELEASED; urgency=low
+sidux-irc (0.4.2) unstable; urgency=low
 
-  * NOT RELEASED YET
+  [ Stefan Lippers-Hollmann ]
   * add VCS control headers.
   * update syntax for Vcs headers in debian/control
+
+  [ Kel Modderman ]
   * Update debian menu section as per new subpolicy.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 25 Oct 2007 22:12:04 +1000
+ -- Kel Modderman <kel@otaku42.de>  Thu, 25 Oct 2007 22:12:04 +1000
 
 sidux-irc (0.4.1) unstable; urgency=low
 
