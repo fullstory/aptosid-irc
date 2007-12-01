@@ -30,7 +30,6 @@ SSFTSH="$(which ssft.sh)"			|| SSFTSH="/usr/bin/ssft.sh"
 SU="$(which su)"				|| SU="/bin/su"
 XTERMINAL="$(which x-terminal-emulator)"	|| XTERMINAL="/usr/bin/x-terminal-emulator"
 
-BITCHX="$(which bitchx)"			|| BITCHX="/usr/bin/bitchx"
 IRSSI="$(which irssi)"				|| IRSSI="/usr/bin/irssi"
 KSIRC="$(which ksirc)"				|| KSIRC="/usr/bin/ksirc"
 KONVERSATION="$(which konversation)"		|| KONVERSATION="/usr/bin/konversation"
@@ -345,9 +344,6 @@ if [ -z "$DISPLAY" ]; then
 
 	[ -x "$WEECHAT" ] && \
 		exec $WEECHAT "irc://$NICK@$FLL_IRC_SERVER:$FLL_IRC_PORT/$FLL_IRC_CHANNEL"
-
-	[ -x "$BITCHX" ] && \
-		exec "$BITCHX" -c "$FLL_IRC_CHANNEL" -n "$NICK"
 else
 	# X11
 	[ -x "$KONVERSATION" ] && \
@@ -386,7 +382,7 @@ fi
 
 # Oops...
 echo "ERROR: failed to start any suitable IRC Client"				1>&2
-for i in "$SSFTSH" "$BITCHX" "$IRSSI" "$KSIRC" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
+for i in "$SSFTSH" "$IRSSI" "$KSIRC" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
 	if [ -x "$i" ]; then
 		echo "$i: found."
 	else
