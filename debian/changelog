@@ -1,6 +1,5 @@
-sidux-irc (0.4.4) UNRELEASED; urgency=low
+sidux-irc (0.4.4) unstable; urgency=low
 
-  * NOT RELEASED YET
   * update to Standards-Version 3.7.3, no changes necessary.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 03 Dec 2007 14:57:43 +0100
