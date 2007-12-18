@@ -9,6 +9,7 @@ Icon=sidux-irc
 MimeType=
 Name=IRC Chat #sidux
 Name[de]=IRC Chat #sidux
+Name[ru]=Чат в канале #sidux
 Path=
 ServiceTypes=
 StartupNotify=true

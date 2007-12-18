@@ -1,8 +1,12 @@
 sidux-irc (0.4.5) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 08 Dec 2007 23:59:18 +0100
+  [ Joaquim Boura ]
+  * Translation thanks to RoEn
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Tue, 18 Dec 2007 13:24:51 +0100
 
 sidux-irc (0.4.4) unstable; urgency=low
 
