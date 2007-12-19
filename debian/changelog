@@ -1,9 +1,5 @@
-sidux-irc (0.4.5) UNRELEASED; urgency=low
+sidux-irc (0.4.5) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Joaquim Boura ]
   * Translation thanks to RoEn
 
  -- Joaquim Boura <x-un-i@sidux.com>  Tue, 18 Dec 2007 13:24:51 +0100
