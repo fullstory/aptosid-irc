@@ -1,8 +1,8 @@
-sidux-irc (0.5.1) UNRELEASED; urgency=low
+sidux-irc (0.5.1) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * drop bogus recommends on sidux-xdg.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 07 Jan 2008 21:14:07 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 08 Jan 2008 19:53:07 +0100
 
 sidux-irc (0.5.0) unstable; urgency=low
 

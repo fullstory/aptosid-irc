@@ -10,7 +10,6 @@ Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-irc/trunk/
 Package: sidux-irc
 Architecture: all
 Depends: ssft, irssi | weechat-curses
-Recommends: sidux-xdg
 Suggests: konversation (>> 0.18) | ksirc | xchat, python, distro-defaults, xterm | x-terminal-emulator, infobash
 Description: Start a suitable IRC client to enter #sidux
  sidux-irc provides an easy way to choose a nickname and to enter the
