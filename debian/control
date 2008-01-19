@@ -2,7 +2,7 @@ Source: sidux-irc
 Section: net
 Priority: optional
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
-Build-Depends: cdbs, debhelper (>= 5), imagemagick
+Build-Depends: cdbs, debhelper (>= 6), imagemagick
 Standards-Version: 3.7.3
 Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-irc/trunk
 Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-irc/trunk/
