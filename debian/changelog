@@ -1,6 +1,5 @@
-sidux-irc (0.5.3) UNRELEASED; urgency=low
+sidux-irc (0.5.3) unstable; urgency=low
 
-  * NOT RELEASED YET
   * remove artwork.
   * remove skel preseeding.
   * rework debian/copyright to be machine readable.
@@ -15,7 +14,7 @@ sidux-irc (0.5.3) UNRELEASED; urgency=low
   * remove obsolete XDG desktop entries.
   * clean up XDG desktop file.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 21 Jan 2008 18:23:16 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 21 Jan 2008 18:24:55 +0100
 
 sidux-irc (0.5.2) unstable; urgency=low
 
