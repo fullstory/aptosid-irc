@@ -1,4 +1,3 @@
 sidux-irc		usr/bin/
-skel			etc/
-skel/Desktop/*.desktop	usr/share/applications/sidux/
+sidux-irc.desktop	usr/share/applications/sidux/
 hicolor			usr/share/icons/
