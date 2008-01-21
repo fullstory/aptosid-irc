@@ -2,9 +2,19 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 
-install/sidux-irc::
-	mkdir -p debian/sidux-irc/usr/share/pixmaps
-	convert hicolor/32x32/apps/sidux-irc.png \
-		debian/sidux-irc/usr/share/pixmaps/sidux-irc.xpm
-	convert hicolor/16x16/apps/sidux-irc.png \
-		debian/sidux-irc/usr/share/pixmaps/sidux-irc-16.xpm
+create-icons::
+	# requires inkscape and imagemagick to be installed
+	# create XDG compatible icons from SVG
+	for i in 16 22 32 48 64 128; do \
+		mkdir -p "icons/hicolor/$${i}x$${i}/apps" ; \
+		inkscape --export-width=$${i} \
+			 --export-height=$${i} \
+			 --export-png="$(CURDIR)/icons/hicolor/$${i}x$${i}/apps/sidux-irc.png" \
+				$(CURDIR)/icons/sidux-irc.svg ; \
+	done
+	
+	# create XPM icons for the debian menu system
+	mkdir -p icons/pixmaps
+	convert icons/hicolor/32x32/apps/sidux-irc.png icons/pixmaps/sidux-irc.xpm
+	convert icons/hicolor/16x16/apps/sidux-irc.png icons/pixmaps/sidux-irc-16.xpm
+

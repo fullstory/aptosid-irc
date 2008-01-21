@@ -1,3 +1,5 @@
 sidux-irc		usr/bin/
 sidux-irc.desktop	usr/share/applications/sidux/
-hicolor			usr/share/icons/
+icons/sidux-irc.svg	usr/share/icons/hicolor/scalable/apps/
+icons/hicolor		usr/share/icons/
+icons/pixmaps		usr/share/
