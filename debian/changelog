@@ -1,12 +1,12 @@
-sidux-irc (0.5.5) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+sidux-irc (0.5.5) unstable; urgency=low
 
   [ Bernard Gray ]
-  * convert text objects in icon 
+  * convert text objects in icon
 
- -- Bernard Gray <bernard.gray@gmail.com>  Tue, 22 Jan 2008 23:39:33 +1100
+  [ Stefan Lippers-Hollmann ]
+  * refresh PNG graphics.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 22 Jan 2008 14:34:19 +0100
 
 sidux-irc (0.5.4) unstable; urgency=low
 
