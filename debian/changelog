@@ -1,14 +1,14 @@
-sidux-irc (0.5.6) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+sidux-irc (0.5.6) unstable; urgency=low
 
   [ Bernard Gray ]
   * update sidux-irc.svg icon to display correctly in kde3/4
   * mirror the icon balloon so the 'link arrow' on desktop doesn't hide the
     spike bit
 
- -- Bernard Gray <bernard.gray@gmail.com>  Tue, 12 Feb 2008 14:14:09 +1100
+  [ Stefan Lippers-Hollmann ]
+  * regenerate PNG icons.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 13 Feb 2008 00:25:14 +0100
 
 sidux-irc (0.5.5) unstable; urgency=low
 
