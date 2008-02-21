@@ -4,27 +4,27 @@ Sat, 16 Jul 2005 15:02:47 +0200.
 It was downloaded from http://developer.berlios.de/projects/fullstory/
 
 Files: *
-Copyright: (C) 2005-2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
-           (C) 2005-2007 Michiel Lieuwe de Boer
+Copyright: © 2005-2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+           © 2005-2007 Michiel Lieuwe de Boer
 License: GPL-2
   The sidux-irc program is licensed under the GNU General Public License,
   version 2.
 
 Files: debian/*
-Copyright: (C) 2005-2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+Copyright: © 2005-2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 License: GPL-2
   The Debian packaging information is licensed under the GNU General
   Public License, version 2.
 
 Files: icons/*
-Copyright: (C) 2008 Bernard Gray <bernard.gray@gmail.com>
-           (C) 2008 David Creedy <djcreedy@iinet.net.au>
-           (C) 2007 David Vignoni <david@icon-king.com>
-           (C) 2007 Johann Ollivier Lapeyre <johann@oxygen-icons.org>
-           (C) 2007 Kenneth Wimer <kwwii@bootsplash.org>
-           (C) 2007 Nuno Fernades Pinheiro <nf.pinheiro@gmail.com>
-           (C) 2007 Riccardo Iaconelli <riccardo@oxygen-icons.org>
-           (C) 2007 David Miller <miller@oxygen-icons.org>
+Copyright: © 2008 Bernard Gray <bernard.gray@gmail.com>
+           © 2008 David Creedy <djcreedy@iinet.net.au>
+           © 2007 David Vignoni <david@icon-king.com>
+           © 2007 Johann Ollivier Lapeyre <johann@oxygen-icons.org>
+           © 2007 Kenneth Wimer <kwwii@bootsplash.org>
+           © 2007 Nuno Fernades Pinheiro <nf.pinheiro@gmail.com>
+           © 2007 Riccardo Iaconelli <riccardo@oxygen-icons.org>
+           © 2007 David Miller <miller@oxygen-icons.org>
 License: CC-ASA-3.0 | LGPL-2+
   ceni.svg also includes elements from The Oxygen Icon Theme.
   Licensed under the Creative Common Attribution-ShareAlike 3.0
