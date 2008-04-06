@@ -1,3 +1,10 @@
+sidux-irc (0.5.8+nmu2) UNRELEASED; urgency=high
+
+  * get rid of unused vars. clean up functions names. restored accidently
+    removed '#'
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Sun, 06 Apr 2008 13:41:33 +0200
+
 sidux-irc (0.5.8+nmu1) UNRELEASED; urgency=high
 
   * Non-maintainer upload.

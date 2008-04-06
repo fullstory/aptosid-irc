@@ -288,13 +288,13 @@ _EOF_
 }
 
 # internal functions
-fll_konversation()
+irc_konversation()
 {
 	exec "$KONVERSATION" --server "$FLL_IRC_SERVER" --port "$FLL_IRC_PORT" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
 }
 
 # internal functions
-fll_xchat()
+irc_xchat()
 {
 	if [ -e "/home/$USERNAME/.xchat2/xchat.conf" ]; then
 		sed -i	-e "/^irc_nick.*/d" \
@@ -319,17 +319,13 @@ fll_xchat()
 }
 
 # internal functions
-fll_check_environ()
+irc_check_environ()
 {
 	use_xchat=0
-	use_konversation=1
 	if [ "${GDMSESSION}" = "gnome" ]; then
 		use_xchat=1
 	elif [ "${GDMSESSION}" = "xfce4" ]; then
 		use_xchat=1
-	else
-		use_xchat=0
-		use_konversation=1
 	fi
 }
 ##############################################################################
@@ -380,7 +376,7 @@ ssft_read_string "${FLL_DISTRO_NAME} IRC Chat" "Choose your nick" || exit 0
 NICK="$SSFT_RESULT"
 
 # try to start your irc client
-fll_check_environ
+irc_check_environ
 if [ -z "$DISPLAY" ]; then
 	# tty
 	if [ -x "$IRSSI" ]; then
@@ -394,10 +390,10 @@ else
 	# X11
 
 	[ -x "$XCHAT" ] && [ "$use_xchat" = "1" ] &&\
-		fll_xchat
+		irc_xchat
 
 	[ -x "$KONVERSATION" ] && \
-		fll_konversation
+		irc_konversation
 
 	[ -x "$KSIRC" ] && \
 		exec "$KSIRC" --server "$FLL_IRC_SERVER" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
