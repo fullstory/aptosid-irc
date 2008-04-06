@@ -1,3 +1,12 @@
+sidux-irc (0.5.8+nmu1) UNRELEASED; urgency=high
+
+  * Non-maintainer upload.
+  * Enhancements to allow choose the "right" chat client dependent on the
+    running environment; KDE->konversation; GNOME/XFCE->xchat, TEXT->irssi
+    konversation and irssi continue to be the fallbacks for X and text mode
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Sun, 06 Apr 2008 11:47:59 +0200
+
 sidux-irc (0.5.8) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
