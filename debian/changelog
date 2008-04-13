@@ -1,24 +1,12 @@
-sidux-irc (0.5.8+nmu2) UNRELEASED; urgency=high
+sidux-irc (0.5.8) unstable; urgency=low
 
+  * Enhancements to allow choose the "right" chat client dependent on the
+    running environment; KDE->konversation; GNOME/XFCE->xchat, TEXT->irssi
+    konversation and irssi continue to be the fallbacks for X and text mode
   * get rid of unused vars. clean up functions names. restored accidently
     removed '#'
 
  -- Joaquim Boura <x-un-i@sidux.com>  Sun, 06 Apr 2008 13:41:33 +0200
-
-sidux-irc (0.5.8+nmu1) UNRELEASED; urgency=high
-
-  * Non-maintainer upload.
-  * Enhancements to allow choose the "right" chat client dependent on the
-    running environment; KDE->konversation; GNOME/XFCE->xchat, TEXT->irssi
-    konversation and irssi continue to be the fallbacks for X and text mode
-
- -- Joaquim Boura <x-un-i@sidux.com>  Sun, 06 Apr 2008 11:47:59 +0200
-
-sidux-irc (0.5.8) UNRELEASED; urgency=low
-
-  * NOT RELEASED YET
-
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 21 Feb 2008 01:08:00 +0100
 
 sidux-irc (0.5.7) unstable; urgency=low
 
