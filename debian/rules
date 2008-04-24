@@ -3,7 +3,7 @@
 %:
 	dh $@
 
-create-icons::
+create-icons:
 	# requires inkscape and imagemagick to be installed
 	@if [ ! -x /usr/bin/convert ]; then \
 		echo "ERROR: imagemagick not installed!" ; \
