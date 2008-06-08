@@ -1,8 +1,8 @@
-sidux-irc (0.5.10) UNRELEASED; urgency=low
+sidux-irc (0.5.10) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.8.0, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 24 Apr 2008 11:48:44 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Jun 2008 19:33:46 +0200
 
 sidux-irc (0.5.9) unstable; urgency=low
 
