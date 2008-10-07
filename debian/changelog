@@ -1,4 +1,4 @@
-sidux-irc (0.5.11) UNRELEASED; urgency=low
+sidux-irc (0.5.11) unstable; urgency=low
 
   * Add support for a LXDE GDMSESSION. Thanks to ModestUser.
     <https://noc.sidux.com/fll/ticket/1>
