@@ -1,8 +1,9 @@
 sidux-irc (0.5.12) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * make lintian happy and depend on ${misc:Depends}.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 07 Oct 2008 20:24:45 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 08 Dec 2008 03:03:17 +0100
 
 sidux-irc (0.5.11) unstable; urgency=low
 
