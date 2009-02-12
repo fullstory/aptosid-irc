@@ -399,7 +399,7 @@ else
 		exec "$KSIRC" --server "$FLL_IRC_SERVER" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
 
 	# nasty fallback, but well - it works ;)
-	exec $XTERMINAL $XTERM_OPT $0 --tty
+	exec $XTERMINAL $XTERM_OPT "$0 --tty"
 fi
 
 # Oops...
