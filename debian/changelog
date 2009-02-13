@@ -1,9 +1,5 @@
-sidux-irc (0.5.13) UNRELEASED; urgency=low
+sidux-irc (0.5.13) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Michael Deelwater ]
   * Quote x-terminal-emulator -e argument. lxterminal cannot parse it
     correctly.
 
