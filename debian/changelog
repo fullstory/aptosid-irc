@@ -1,3 +1,9 @@
+sidux-irc (0.5.16) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 25 Feb 2009 23:22:55 +0100
+
 sidux-irc (0.5.15) unstable; urgency=low
 
   * copyright was referencing ceni.svg instead of sidux-irc.svg
