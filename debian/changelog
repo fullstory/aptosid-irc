@@ -1,9 +1,5 @@
-sidux-irc (0.5.15) UNRELEASED; urgency=low
+sidux-irc (0.5.15) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Bernard Gray ]
   * copyright was referencing ceni.svg instead of sidux-irc.svg
 
  -- Bernard Gray <bernard.gray@gmail.com>  Mon, 23 Feb 2009 22:18:43 +1100
