@@ -323,9 +323,10 @@ irc_check_environ()
 {
 	use_xchat=0
 	if [ "${GDMSESSION}" = "gnome" ] || \
+		[ "${GDMSESSION}" = "xfce" ] || \
 		[ "${GDMSESSION}" = "xfce4" ] || \
 		[ "${GDMSESSION}" = "LXDE" ]; then
-		use_xchat=1
+			use_xchat=1
 	fi
 }
 ##############################################################################
