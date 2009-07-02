@@ -4,9 +4,10 @@ sidux-irc (0.5.17) UNRELEASED; urgency=low
   * NOT RELEASED YET
 
   [ Bernard Gray ]
-  * update art for 2009-02 -- do not release
+  * update art for 2009-02
+  * convert all bitmaps to new svg art -- do not release
 
- -- Bernard Gray <bernard.gray@gmail.com>  Thu, 02 Jul 2009 19:00:35 +1000
+ -- Bernard Gray <bernard.gray@gmail.com>  Thu, 02 Jul 2009 21:11:35 +1000
 
 sidux-irc (0.5.16) unstable; urgency=low
 
