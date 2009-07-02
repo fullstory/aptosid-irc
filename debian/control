@@ -3,20 +3,20 @@ Section: net
 Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Build-Depends: debhelper (>= 7)
-Standards-Version: 3.8.0
+Standards-Version: 3.8.2
 Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-irc/trunk
 Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-irc/trunk/
 
 Package: sidux-irc
 Architecture: all
 Depends: ${misc:Depends},
-         ssft,
-         irssi | weechat-curses
+ ssft,
+ irssi | weechat-curses
 Suggests: konversation (>> 0.18) | ksirc | xchat,
-          python,
-          distro-defaults,
-          xterm | x-terminal-emulator,
-          infobash
+ python,
+ distro-defaults,
+ xterm | x-terminal-emulator,
+ infobash
 Description: Start a suitable IRC client to enter #sidux
  sidux-irc provides an easy way to choose a nickname and to enter the
  #sidux irc channel.

@@ -1,14 +1,14 @@
-sidux-irc (0.5.17) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+sidux-irc (0.5.17) unstable; urgency=low
 
   [ Bernard Gray ]
   * update art for 2009-02
   * convert all bitmaps to new svg art 
-  * ready for release
 
- -- Bernard Gray <bernard.gray@gmail.com>  Thu, 02 Jul 2009 21:48:55 +1000
+  [ Stefan Lippers-Hollmann ]
+  * generate binary artwork.
+  * bump standards version to 3.8.2.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 03 Jul 2009 00:00:52 +0200
 
 sidux-irc (0.5.16) unstable; urgency=low
 
