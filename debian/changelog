@@ -1,8 +1,12 @@
 sidux-irc (0.5.17) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 06 Jun 2009 20:19:11 +0200
+  [ Bernard Gray ]
+  * update art for 2009-02 -- do not release
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Thu, 02 Jul 2009 19:00:35 +1000
 
 sidux-irc (0.5.16) unstable; urgency=low
 
