@@ -1,9 +1,5 @@
-sidux-irc (0.5.18) UNRELEASED; urgency=low
+sidux-irc (0.5.18) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Nikolas Poniros ]
   * extra test to set use_xchat to 1 in case we have slim
   * added myself as uploader
 
