@@ -1,12 +1,13 @@
-sidux-irc (0.5.19) UNRELEASED; urgency=low
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+sidux-irc (0.5.19) unstable; urgency=low
 
   [ Nikolas Poniros ]
   * fix so Web-* nick can be selected in xchat 
 
- -- Nikolas Poniros <edhunter@sidux.com>  Fri, 26 Feb 2010 01:01:07 +0100
+  [ Stefan Lippers-Hollmann ]
+  * Switch to dpkg-source 3.0 (native) format.
+  * bump standards version to 3.8.4, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 26 Feb 2010 01:11:00 +0100
 
 sidux-irc (0.5.18) unstable; urgency=low
 
