@@ -296,24 +296,24 @@ irc_konversation()
 # internal functions
 irc_xchat()
 {
-	if [ -e "/home/$USERNAME/.xchat2/xchat.conf" ]; then
+	if [ -e "/home/$USER/.xchat2/xchat.conf" ]; then
 		sed -i	-e "/^irc_nick.*/d" \
 			-e "/^irc_user_name.*/d" \
 			-e "/^irc_real_name.*/d" \
 			-e "/^tab_layout.*/d" \
-				/home/$USERNAME/.xchat2/xchat.conf
+				/home/$USER/.xchat2/xchat.conf
 
 	else
-		mkdir -p /home/$USERNAME/.xchat2
-		touch /home/$USERNAME/.xchat2/xchat.conf
+		mkdir -p /home/$USER/.xchat2
+		touch /home/$USER/.xchat2/xchat.conf
 	fi
 
-	echo "irc_nick1 = $NICK" >> /home/$USERNAME/.xchat2/xchat.conf
-	echo "irc_nick2 = $NICK_" >> /home/$USERNAME/.xchat2/xchat.conf
-	echo "irc_nick3 = $NICK__" >> /home/$USERNAME/.xchat2/xchat.conf
-	echo "irc_user_name = $NICK" >> /home/$USERNAME/.xchat2/xchat.conf
-	echo "irc_real_name = $NICK" >> /home/$USERNAME/.xchat2/xchat.conf
-	echo "tab_layout = 0" >> /home/$USERNAME/.xchat2/xchat.conf
+	echo "irc_nick1 = $NICK" >> /home/$USER/.xchat2/xchat.conf
+	echo "irc_nick2 = ${NICK}_" >> /home/$USER/.xchat2/xchat.conf
+	echo "irc_nick3 = ${NICK}__" >> /home/$USER/.xchat2/xchat.conf
+	echo "irc_user_name = $NICK" >> /home/$USER/.xchat2/xchat.conf
+	echo "irc_real_name = $NICK" >> /home/$USER/.xchat2/xchat.conf
+	echo "tab_layout = 0" >> /home/$USER/.xchat2/xchat.conf
 
 	exec "$XCHAT" --url=irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
 }

@@ -1,8 +1,12 @@
 sidux-irc (0.5.19) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 22 Dec 2009 02:28:27 +0100
+  [ Nikolas Poniros ]
+  * fix so Web-* nick can be selected in xchat 
+
+ -- Nikolas Poniros <edhunter@sidux.com>  Fri, 26 Feb 2010 01:01:07 +0100
 
 sidux-irc (0.5.18) unstable; urgency=low
 
