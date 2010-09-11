@@ -21,7 +21,7 @@ sidux-irc (0.5.20) unstable; urgency=low
 sidux-irc (0.5.19) unstable; urgency=low
 
   [ Nikolas Poniros ]
-  * fix so Web-* nick can be selected in xchat 
+  * fix so Web-* nick can be selected in xchat
 
   [ Stefan Lippers-Hollmann ]
   * Switch to dpkg-source 3.0 (native) format.
@@ -40,7 +40,7 @@ sidux-irc (0.5.17) unstable; urgency=low
 
   [ Bernard Gray ]
   * update art for 2009-02
-  * convert all bitmaps to new svg art 
+  * convert all bitmaps to new svg art
 
   [ Stefan Lippers-Hollmann ]
   * generate binary artwork.
@@ -231,7 +231,7 @@ sidux-irc (0.3.16) unstable; urgency=low
 sidux-irc (0.3.15) unstable; urgency=low
 
   * Xdialog to zenity replaced, Xdialog doesn't work in gnome
-  * xchat part updated 
+  * xchat part updated
 
  -- Horst Tritremmel <hjt@sidux.com>  Fri, 06 Jul 2007 10:08:02 +0200
 
@@ -256,13 +256,13 @@ sidux-irc (0.3.12) unstable; urgency=low
 
 sidux-irc (0.3.11) unstable; urgency=low
 
-  * xchat Function fixed. 
+  * xchat Function fixed.
 
  -- Andreas Weber <andreas@it-weber.com>  Sun, 27 May 2007 15:27:03 +0200
 
 sidux-irc (0.3.10) unstable; urgency=low
 
-  * Commandline for xchat fixed 
+  * Commandline for xchat fixed
 
  -- Andreas Weber <andreas@it-weber.com>  Thu, 24 May 2007 20:14:50 +0200
 
