@@ -1,14 +1,14 @@
-Source: sidux-irc
+Source: aptosid-irc
 Section: net
 Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Nikolas Poniros <edhunter@sidux.com>
 Build-Depends: debhelper (>= 7.9.3)
 Standards-Version: 3.9.1
-Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-irc/trunk
-Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-irc/trunk/
+Vcs-Svn: svn://svn.berlios.de/fullstory/aptosid-irc/trunk
+Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/aptosid-irc/trunk/
 
-Package: sidux-irc
+Package: aptosid-irc
 Architecture: all
 Depends: ${misc:Depends},
  ssft,
@@ -18,9 +18,23 @@ Suggests: konversation (>> 0.18) | ksirc | xchat,
  distro-defaults,
  xterm | x-terminal-emulator,
  infobash
-Description: Start a suitable IRC client to enter #sidux
- sidux-irc provides an easy way to choose a nickname and to enter the
- #sidux irc channel.
+Description: Start a suitable IRC client to enter #aptosid
+ aptosid-irc provides an easy way to choose a nickname and to enter the
+ #aptosid irc channel.
  .
- sidux-irc tries to catch starting an IRC client as root and offers frontend
+ aptosid-irc tries to catch starting an IRC client as root and offers frontend
  support for various X and cli IRC clients.
+
+Package: sidux-irc
+Section: oldlibs
+Architecture: all
+Depends: ${misc:Depends},
+ aptosid-irc
+Description: Start a suitable IRC client to enter #aptosid
+ aptosid-irc provides an easy way to choose a nickname and to enter the
+ #aptosid irc channel.
+ .
+ aptosid-irc tries to catch starting an IRC client as root and offers frontend
+ support for various X and cli IRC clients.
+ .
+ transitional metapackage to pull in aptosid-irc

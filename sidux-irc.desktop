@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=sidux-irc
-Icon=sidux-irc
-Name=sidux-irc
-GenericName=IRC Chat #sidux
-GenericName[de]=IRC Chat #sidux
-GenericName[ru]=Чат в канале #sidux
-Categories=Network;

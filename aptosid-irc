@@ -15,8 +15,8 @@
 # override tool behaviour through distro-defaults
 FLL_IRC_SERVER="irc.oftc.net"
 FLL_IRC_PORT="6667"
-FLL_IRC_CHANNEL="#sidux"
-FLL_DISTRO_NAME="sidux"
+FLL_IRC_CHANNEL="#aptosid"
+FLL_DISTRO_NAME="aptosid"
 [ -r /etc/default/distro ] && . /etc/default/distro
 
 # define user settings
@@ -44,10 +44,10 @@ fll_irssi()
 	IRSSICFG="$($MKTEMP -dp /tmp/ .irssi-XXXXXXXXXX)"
 
 	CTCPS=0
-	if [ -e /etc/sidux-version ]; then
-		QUITMSG="$(cat /etc/sidux-version) | http://sidux.com"
+	if [ -e /etc/aptosid-version ]; then
+		QUITMSG="$(cat /etc/aptosid-version) | http://aptosid.com"
 	else
-		QUITMSG="http://sidux.com"
+		QUITMSG="http://aptosid.com"
 	fi
 
 	cat <<_EOF_ >"$IRSSICFG/config"
@@ -75,7 +75,7 @@ channels = (
 );
 _EOF_
 
-	# See also special sidux aliases in here, like "/IBS", "/IBV", "/IB", "/GFX", "/SND", and "/X"
+	# See also special aptosid aliases in here, like "/IBS", "/IBV", "/IB", "/GFX", "/SND", and "/X"
 	cat <<"_EOF_" >>"$IRSSICFG/config"
 aliases = {
   J = "join";
@@ -242,8 +242,8 @@ _EOF_
 	cat <<_EOF_ >>"$IRSSICFG/config"
 settings = {
   core = {
-    real_name = "sidux user";
-    user_name = "sidux";
+    real_name = "aptosid user";
+    user_name = "aptosid";
     nick = "$NICK";
     quit_message = "$QUITMSG";
   };

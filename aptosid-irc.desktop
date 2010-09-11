@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=aptosid-irc
+Icon=aptosid-irc
+Name=aptosid-irc
+GenericName=IRC Chat #aptosid
+GenericName[de]=IRC Chat #aptosid
+GenericName[ru]=Чат в канале #aptosid
+Categories=Network;

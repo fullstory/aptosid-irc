@@ -1,8 +1,8 @@
-sidux-irc (0.5.23) UNRELEASED; urgency=low
+aptosid-irc (0.6.0) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * rename package to aptosid-irc.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Aug 2010 05:20:55 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 26 Aug 2010 01:53:35 +0200
 
 sidux-irc (0.5.22) unstable; urgency=low
 

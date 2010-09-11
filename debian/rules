@@ -19,12 +19,12 @@ create-icons:
 		mkdir -p "icons/hicolor/$${i}x$${i}/apps" ; \
 		inkscape --export-width=$${i} \
 			 --export-height=$${i} \
-			 --export-png="$(CURDIR)/icons/hicolor/$${i}x$${i}/apps/sidux-irc.png" \
-				$(CURDIR)/icons/sidux-irc.svg ; \
+			 --export-png="$(CURDIR)/icons/hicolor/$${i}x$${i}/apps/aptosid-irc.png" \
+				$(CURDIR)/icons/aptosid-irc.svg ; \
 	done
 	
 	# create XPM icons for the debian menu system
 	mkdir -p icons/pixmaps
-	convert icons/hicolor/32x32/apps/sidux-irc.png icons/pixmaps/sidux-irc.xpm
-	convert icons/hicolor/16x16/apps/sidux-irc.png icons/pixmaps/sidux-irc-16.xpm
+	convert icons/hicolor/32x32/apps/aptosid-irc.png icons/pixmaps/aptosid-irc.xpm
+	convert icons/hicolor/16x16/apps/aptosid-irc.png icons/pixmaps/aptosid-irc-16.xpm
 

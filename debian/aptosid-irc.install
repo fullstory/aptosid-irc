@@ -1,0 +1,5 @@
+aptosid-irc		usr/bin/
+aptosid-irc.desktop	usr/share/applications/aptosid/
+icons/aptosid-irc.svg	usr/share/icons/hicolor/scalable/apps/
+icons/hicolor		usr/share/icons/
+icons/pixmaps		usr/share/

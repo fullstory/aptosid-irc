@@ -7,7 +7,7 @@ Files: *
 Copyright: © 2005-2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
            © 2005-2007 Michiel Lieuwe de Boer
 License: GPL-2
-  The sidux-irc program is licensed under the GNU General Public License,
+  The aptosid-irc program is licensed under the GNU General Public License,
   version 2.
 
 Files: debian/*
@@ -26,7 +26,7 @@ Copyright: © 2008 Bernard Gray <bernard.gray@gmail.com>
            © 2007 Riccardo Iaconelli <riccardo@oxygen-icons.org>
            © 2007 David Miller <miller@oxygen-icons.org>
 License: CC-ASA-3.0 | LGPL-2+
-  sidux-irc.svg also includes elements from The Oxygen Icon Theme.
+  aptosid-irc.svg also includes elements from The Oxygen Icon Theme.
   Licensed under the Creative Common Attribution-ShareAlike 3.0
   license, as found here:
 
