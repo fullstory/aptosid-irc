@@ -1,3 +1,9 @@
+aptosid-irc (0.6.2) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 Sep 2010 00:22:08 +0200
+
 aptosid-irc (0.6.1) unstable; urgency=low
 
   * work around legacy distro-defaults settings.
