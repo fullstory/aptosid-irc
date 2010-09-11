@@ -1,3 +1,9 @@
+sidux-irc (0.5.21) unstable; urgency=low
+
+  * bump standards version to 3.9.1, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 04 Aug 2010 03:37:44 +0200
+
 sidux-irc (0.5.20) unstable; urgency=low
 
   * bump standards version to 3.9.0, no changes necessary.
