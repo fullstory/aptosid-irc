@@ -1,8 +1,10 @@
-sidux-irc (0.5.20) UNRELEASED; urgency=low
+sidux-irc (0.5.20) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.9.0, no changes necessary.
+  * regenerate icons.
+  * elaborate long description a bit further, to make lintian happy.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 26 Feb 2010 01:14:27 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Jul 2010 01:42:07 +0200
 
 sidux-irc (0.5.19) unstable; urgency=low
 

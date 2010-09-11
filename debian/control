@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Nikolas Poniros <edhunter@sidux.com>
 Build-Depends: debhelper (>= 7)
-Standards-Version: 3.8.4
+Standards-Version: 3.9.0
 Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-irc/trunk
 Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-irc/trunk/
 
@@ -21,3 +21,6 @@ Suggests: konversation (>> 0.18) | ksirc | xchat,
 Description: Start a suitable IRC client to enter #sidux
  sidux-irc provides an easy way to choose a nickname and to enter the
  #sidux irc channel.
+ .
+ sidux-irc tries to catch starting an IRC client as root and offers frontend
+ support for various X and cli IRC clients.
