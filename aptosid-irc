@@ -1,6 +1,6 @@
 #!/bin/sh
 # Copyright (C) 2005 Michiel Lieuwe de Boer
-# Copyright (C) 2005-2007 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+# Copyright (C) 2005-2010 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -18,6 +18,9 @@ FLL_IRC_PORT="6667"
 FLL_IRC_CHANNEL="#aptosid"
 FLL_DISTRO_NAME="aptosid"
 [ -r /etc/default/distro ] && . /etc/default/distro
+
+# work around transitioning side effects
+[ "${FLL_IRC_CHANNEL}" = "#sidux" ] && FLL_IRC_CHANNEL="#aptosid"
 
 # define user settings
 NICK="Web-${FLL_DISTRO_NAME}$(mawk 'BEGIN{print int(1000 * rand())}')"
