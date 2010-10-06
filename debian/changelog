@@ -1,8 +1,14 @@
-aptosid-irc (0.6.2) UNRELEASED; urgency=low
+aptosid-irc (0.6.3) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix hjt's mail address.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 Sep 2010 00:22:08 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 06 Oct 2010 15:32:15 +0200
+
+aptosid-irc (0.6.2) unstable; urgency=low
+
+  * fix x-un-i's mail address.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 06 Oct 2010 14:24:47 +0200
 
 aptosid-irc (0.6.1) unstable; urgency=low
 
@@ -124,7 +130,7 @@ sidux-irc (0.5.8) unstable; urgency=low
   * get rid of unused vars. clean up functions names. restored accidently
     removed '#'
 
- -- Joaquim Boura <x-un-i@sidux.com>  Sun, 06 Apr 2008 13:41:33 +0200
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 06 Apr 2008 13:41:33 +0200
 
 sidux-irc (0.5.7) unstable; urgency=low
 
@@ -200,7 +206,7 @@ sidux-irc (0.4.5) unstable; urgency=low
 
   * Translation thanks to RoEn
 
- -- Joaquim Boura <x-un-i@sidux.com>  Tue, 18 Dec 2007 13:24:51 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 18 Dec 2007 13:24:51 +0100
 
 sidux-irc (0.4.4) unstable; urgency=low
 
@@ -251,7 +257,7 @@ sidux-irc (0.3.15) unstable; urgency=low
   * Xdialog to zenity replaced, Xdialog doesn't work in gnome
   * xchat part updated
 
- -- Horst Tritremmel <hjt@sidux.com>  Fri, 06 Jul 2007 10:08:02 +0200
+ -- Horst Tritremmel <hjt@users.berlios.de>  Fri, 06 Jul 2007 10:08:02 +0200
 
 sidux-irc (0.3.14) unstable; urgency=low
 
