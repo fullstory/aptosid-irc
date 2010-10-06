@@ -1,8 +1,8 @@
-aptosid-irc (0.6.2) UNRELEASED; urgency=low
+aptosid-irc (0.6.2) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * fix x-un-i's mail address.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 12 Sep 2010 00:22:08 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 06 Oct 2010 14:24:47 +0200
 
 aptosid-irc (0.6.1) unstable; urgency=low
 
@@ -124,7 +124,7 @@ sidux-irc (0.5.8) unstable; urgency=low
   * get rid of unused vars. clean up functions names. restored accidently
     removed '#'
 
- -- Joaquim Boura <x-un-i@sidux.com>  Sun, 06 Apr 2008 13:41:33 +0200
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 06 Apr 2008 13:41:33 +0200
 
 sidux-irc (0.5.7) unstable; urgency=low
 
@@ -200,7 +200,7 @@ sidux-irc (0.4.5) unstable; urgency=low
 
   * Translation thanks to RoEn
 
- -- Joaquim Boura <x-un-i@sidux.com>  Tue, 18 Dec 2007 13:24:51 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 18 Dec 2007 13:24:51 +0100
 
 sidux-irc (0.4.4) unstable; urgency=low
 
