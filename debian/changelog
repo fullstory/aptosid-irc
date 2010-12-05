@@ -1,8 +1,9 @@
 aptosid-irc (0.6.4) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
+  * when GDMSESSION is defined then the main x-client is xchat
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 06 Oct 2010 15:32:58 +0200
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 05 Dec 2010 13:22:49 +0100
 
 aptosid-irc (0.6.3) unstable; urgency=low
 
