@@ -2,8 +2,9 @@ aptosid-irc (0.6.4) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
   * when GDMSESSION is defined then the main x-client is xchat
+  * missing space in control file added. 
 
- -- Joaquim Boura <x-un-i@berlios.de>  Sun, 05 Dec 2010 13:22:49 +0100
+ -- Joaquim Boura <x-un-i@berlios.de>  Sun, 05 Dec 2010 16:17:57 +0100
 
 aptosid-irc (0.6.3) unstable; urgency=low
 
