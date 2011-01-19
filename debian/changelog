@@ -1,10 +1,13 @@
-aptosid-irc (0.6.4) UNRELEASED; urgency=low
+aptosid-irc (0.6.4) unstable; urgency=low
 
-  * NOT RELEASED YET
+  [ Joaquim Boura ]
   * when GDMSESSION is defined then the main x-client is xchat
   * missing space in control file added. 
 
- -- Joaquim Boura <x-un-i@berlios.de>  Sun, 05 Dec 2010 16:17:57 +0100
+  [ Stefan Lippers-Hollmann ]
+  * add another override for legacy systems.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 20 Jan 2011 00:42:10 +0100
 
 aptosid-irc (0.6.3) unstable; urgency=low
 

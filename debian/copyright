@@ -4,7 +4,7 @@ Sat, 16 Jul 2005 15:02:47 +0200.
 It was downloaded from http://developer.berlios.de/projects/fullstory/
 
 Files: *
-Copyright: © 2005-2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+Copyright: © 2005-2010 Stefan Lippers-Hollmann <s.l-h@gmx.de>
            © 2005-2007 Michiel Lieuwe de Boer
 License: GPL-2
   The aptosid-irc program is licensed under the GNU General Public License,
@@ -62,4 +62,3 @@ version 2, can be found in `/usr/share/common-licenses/GPL-2'.
 
 On Debian systems, the complete text of the GNU Lesser General Public License,
 version 2, can be found in `/usr/share/common-licenses/LGPL-2'.
-
