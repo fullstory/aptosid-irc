@@ -24,17 +24,3 @@ Description: Start a suitable IRC client to enter #aptosid
  .
  aptosid-irc tries to catch starting an IRC client as root and offers frontend
  support for various X and cli IRC clients.
-
-Package: sidux-irc
-Section: oldlibs
-Architecture: all
-Depends: ${misc:Depends},
- aptosid-irc
-Description: Start a suitable IRC client to enter #aptosid
- aptosid-irc provides an easy way to choose a nickname and to enter the
- #aptosid irc channel.
- .
- aptosid-irc tries to catch starting an IRC client as root and offers frontend
- support for various X and cli IRC clients.
- .
- transitional metapackage to pull in aptosid-irc
