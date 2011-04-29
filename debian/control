@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Joaquim Boura <x-un-i@berlios.de>
 Build-Depends: debhelper (>= 7.9.3)
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 Vcs-Svn: svn://svn.berlios.de/fullstory/aptosid-irc/trunk
 Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/aptosid-irc/trunk/
 
