@@ -1,3 +1,9 @@
+aptosid-irc (0.6.7) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 29 Apr 2011 03:34:18 +0200
+
 aptosid-irc (0.6.6) unstable; urgency=low
 
   * bump standards version to 3.9.2, no changes necessary.
