@@ -1,8 +1,14 @@
-aptosid-irc (0.6.8) UNRELEASED; urgency=low
+aptosid-irc (0.6.9) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * update icons.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 28 Dec 2011 08:49:18 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 16 Jan 2012 03:38:52 +0100
+
+aptosid-irc (0.6.8) unstable; urgency=low
+
+  * switch to compat level 9.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 16 Jan 2012 00:10:37 +0100
 
 aptosid-irc (0.6.7) unstable; urgency=low
 
