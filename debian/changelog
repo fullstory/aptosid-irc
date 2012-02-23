@@ -1,8 +1,8 @@
-aptosid-irc (0.6.10) UNRELEASED; urgency=low
+aptosid-irc (0.6.10) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.9.3, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 16 Jan 2012 03:39:04 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Feb 2012 15:35:54 +0100
 
 aptosid-irc (0.6.9) unstable; urgency=low
 
