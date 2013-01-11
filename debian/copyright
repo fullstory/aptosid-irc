@@ -4,56 +4,56 @@ Sat, 16 Jul 2005 15:02:47 +0200.
 It was downloaded from http://developer.berlios.de/projects/fullstory/
 
 Files: *
-Copyright: © 2005-2012 Stefan Lippers-Hollmann <s.l-h@gmx.de>
-           © 2005-2007 Michiel Lieuwe de Boer
+Copyright: © 2005-2013, Stefan Lippers-Hollmann <s.l-h@gmx.de>
+           © 2005-2007, Michiel Lieuwe de Boer
 License: GPL-2
   The aptosid-irc program is licensed under the GNU General Public License,
   version 2.
 
 Files: debian/*
-Copyright: © 2005-2008 Stefan Lippers-Hollmann <s.l-h@gmx.de>
+Copyright: © 2005-2013, Stefan Lippers-Hollmann <s.l-h@gmx.de>
 License: GPL-2
   The Debian packaging information is licensed under the GNU General
   Public License, version 2.
 
 Files: icons/*
-Copyright: © 2008 Bernard Gray <bernard.gray@gmail.com>
-           © 2008 David Creedy <djcreedy@iinet.net.au>
-           © 2007 David Vignoni <david@icon-king.com>
-           © 2007 Johann Ollivier Lapeyre <johann@oxygen-icons.org>
-           © 2007 Kenneth Wimer <kwwii@bootsplash.org>
-           © 2007 Nuno Fernades Pinheiro <nf.pinheiro@gmail.com>
-           © 2007 Riccardo Iaconelli <riccardo@oxygen-icons.org>
-           © 2007 David Miller <miller@oxygen-icons.org>
+Copyright: © 2008, Bernard Gray <bernard.gray@gmail.com>
+           © 2008, David Creedy <djcreedy@iinet.net.au>
+           © 2007, David Vignoni <david@icon-king.com>
+           © 2007, Johann Ollivier Lapeyre <johann@oxygen-icons.org>
+           © 2007, Kenneth Wimer <kwwii@bootsplash.org>
+           © 2007, Nuno Fernades Pinheiro <nf.pinheiro@gmail.com>
+           © 2007, Riccardo Iaconelli <riccardo@oxygen-icons.org>
+           © 2007, David Miller <miller@oxygen-icons.org>
 License: CC-ASA-3.0 | LGPL-2+
   aptosid-irc.svg also includes elements from The Oxygen Icon Theme.
   Licensed under the Creative Common Attribution-ShareAlike 3.0
   license, as found here:
-
+  .
     http://creativecommons.org/licenses/by-sa/3.0/
-
+  .
   or the GNU Library General Public License (with following clarification).
-
+  .
   Clarification:
   The GNU Lesser General Public License or LGPL is written for
   software libraries in the first place. We expressly want the LGPL to
   be valid for this artwork library too.
-
+  .
   KDE Oxygen theme icons is a special kind of software library, it is an
   artwork library, it's elements can be used in a Graphical User Interface, or
   GUI.
-
+  .
   Source code, for this library means:
    - where they exist, SVG;
    - otherwise, if applicable, the multi-layered formats xcf or psd, or
   otherwise png.
-
+  .
   The LGPL in some sections obliges you to make the files carry
   notices. With images this is in some cases impossible or hardly useful.
-
+  .
   With this library a notice is placed at a prominent place in the directory
   containing the elements. You may follow this practice.
-
+  .
   The exception in section 6 of the GNU Lesser General Public License covers
   the use of elements of this art library in a GUI.
 
