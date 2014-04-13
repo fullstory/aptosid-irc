@@ -4,9 +4,9 @@ Priority: extra
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Uploaders: Joaquim Boura <x-un-i@sapo.pt>
 Build-Depends: debhelper (>= 9.20120115)
-Standards-Version: 3.9.4
-Vcs-Svn: svn://svn.berlios.de/fullstory/aptosid-irc/trunk
-Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/aptosid-irc/trunk/
+Standards-Version: 3.9.5
+Vcs-git: git://github.com/fullstory/aptosid-irc.git
+Vcs-Browser: https://github.com/fullstory/aptosid-irc
 
 Package: aptosid-irc
 Architecture: all

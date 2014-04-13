@@ -1,8 +1,9 @@
-aptosid-irc (0.6.12) UNRELEASED; urgency=low
+aptosid-irc (0.6.12) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * bump standards version to 3.9.5, no changes necessary.
+  * debian/control: switch Vcs tags to github.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 12 Jan 2013 00:27:50 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 13 Apr 2014 18:09:35 +0200
 
 aptosid-irc (0.6.11) unstable; urgency=low
 
