@@ -3,6 +3,8 @@ aptosid-irc (0.6.13) UNRELEASED; urgency=medium
   * NOT RELEASED YET
   * use machine readable copyright.
   * bump standards version to 3.9.6, no changes necessary.
+  * drop versioned suggests for konversation, it's fullfilled by any stable
+    Debian release for ages.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 13 Apr 2014 18:14:12 +0200
 

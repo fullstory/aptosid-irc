@@ -13,7 +13,7 @@ Architecture: all
 Depends: ${misc:Depends},
  ssft,
  irssi | weechat-curses
-Suggests: konversation (>> 0.18) | ksirc | xchat,
+Suggests: konversation | ksirc | xchat,
  python,
  distro-defaults,
  xterm | x-terminal-emulator,
