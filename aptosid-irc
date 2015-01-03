@@ -1,6 +1,6 @@
 #!/bin/sh
 # Copyright (C) 2005, Michiel Lieuwe de Boer
-# Copyright (C) 2005-2014, Stefan Lippers-Hollmann <s.l-h@gmx.de>
+# Copyright (C) 2005-2015, Stefan Lippers-Hollmann <s.l-h@gmx.de>
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -35,7 +35,6 @@ SU="$(which su)"				|| SU="/bin/su"
 XTERMINAL="$(which x-terminal-emulator)"	|| XTERMINAL="/usr/bin/x-terminal-emulator"
 
 IRSSI="$(which irssi)"				|| IRSSI="/usr/bin/irssi"
-KSIRC="$(which ksirc)"				|| KSIRC="/usr/bin/ksirc"
 KONVERSATION="$(which konversation)"		|| KONVERSATION="/usr/bin/konversation"
 WEECHAT="$(which weechat-curses)"		|| WEECHAT="/usr/bin/weechat-curses"
 XCHAT="$(which xchat)"				|| XCHAT="/usr/bin/xchat"
@@ -398,16 +397,13 @@ else
 	[ -x "$KONVERSATION" ] && \
 		irc_konversation
 
-	[ -x "$KSIRC" ] && \
-		exec "$KSIRC" --server "$FLL_IRC_SERVER" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
-
 	# nasty fallback, but well - it works ;)
 	exec $XTERMINAL $XTERM_OPT "$0 --tty"
 fi
 
 # Oops...
 echo "ERROR: failed to start any suitable IRC Client"				1>&2
-for i in "$SSFTSH" "$IRSSI" "$KSIRC" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
+for i in "$SSFTSH" "$IRSSI" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
 	if [ -x "$i" ]; then
 		echo "$i: found."
 	else
