@@ -1,14 +1,10 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@
+	dh ${@} --parallel
 
 create-icons:
-	# requires inkscape and imagemagick to be installed
-	@if [ ! -x /usr/bin/convert ]; then \
-		echo "ERROR: imagemagick not installed!" ; \
-		false ; \
-	fi
+	# requires inkscape to be installed
 	@if [ ! -x /usr/bin/inkscape ]; then \
 		echo "ERROR: inkscape not installed!" ; \
 		false ; \
@@ -22,9 +18,3 @@ create-icons:
 			 --export-png="$(CURDIR)/icons/hicolor/$${i}x$${i}/apps/aptosid-irc.png" \
 				$(CURDIR)/icons/aptosid-irc.svg ; \
 	done
-	
-	# create XPM icons for the debian menu system
-	mkdir -p icons/pixmaps
-	convert icons/hicolor/32x32/apps/aptosid-irc.png icons/pixmaps/aptosid-irc.xpm
-	convert icons/hicolor/16x16/apps/aptosid-irc.png icons/pixmaps/aptosid-irc-16.xpm
-

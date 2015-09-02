@@ -1,8 +1,0 @@
-?package(aptosid-irc): \
-	needs="X11" \
-	section="Applications/Network/Communication" \
-	hints="aptosid,Net" \
-	title="IRC Chat #aptosid" \
-	icon32x32="/usr/share/pixmaps/aptosid-irc.xpm" \
-	icon16x16="/usr/share/pixmaps/aptosid-irc-16.xpm" \
-	command="aptosid-irc"
