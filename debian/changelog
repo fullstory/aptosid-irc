@@ -1,8 +1,8 @@
-aptosid-irc (0.6.15) UNRELEASED; urgency=medium
+aptosid-irc (0.7.0) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * add support for hexchat.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 02 Sep 2015 20:51:46 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 26 Nov 2015 03:32:19 +0100
 
 aptosid-irc (0.6.14) unstable; urgency=medium
 

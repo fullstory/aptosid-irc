@@ -34,6 +34,7 @@ SSFTSH="$(which ssft.sh)"			|| SSFTSH="/usr/bin/ssft.sh"
 SU="$(which su)"				|| SU="/bin/su"
 XTERMINAL="$(which x-terminal-emulator)"	|| XTERMINAL="/usr/bin/x-terminal-emulator"
 
+HEXCHAT="$(which hexchat)"			|| HEXCHAT="/usr/bin/hexchat"
 IRSSI="$(which irssi)"				|| IRSSI="/usr/bin/irssi"
 KONVERSATION="$(which konversation)"		|| KONVERSATION="/usr/bin/konversation"
 WEECHAT="$(which weechat-curses)"		|| WEECHAT="/usr/bin/weechat-curses"
@@ -321,12 +322,37 @@ irc_xchat()
 	exec "$XCHAT" --url=irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
 }
 
+irc_hexchat()
+{
+	if [ -e "/home/$USER/.config/hexchat/hexchat.conf" ]; then
+		sed -i	-e "/^irc_nick.*/d" \
+			-e "/^irc_user_name.*/d" \
+			-e "/^irc_real_name.*/d" \
+			-e "/^tab_layout.*/d" \
+				/home/$USER/.config/hexchat/hexchat.conf
+
+	else
+		mkdir -p /home/$USER/.config/hexchat
+		touch /home/$USER/.config/hexchat/hexchat.conf
+	fi
+
+	echo "irc_nick1 = $NICK" >> /home/$USER/.config/hexchat/hexchat.conf
+	echo "irc_nick2 = ${NICK}_" >> /home/$USER/.config/hexchat/hexchat.conf
+	echo "irc_nick3 = ${NICK}__" >> /home/$USER/.config/hexchat/hexchat.conf
+	echo "irc_user_name = $NICK" >> /home/$USER/.config/hexchat/hexchat.conf
+	echo "irc_real_name = $NICK" >> /home/$USER/.config/hexchat/hexchat.conf
+	echo "tab_layout = 0" >> /home/$USER/.config/hexchat/hexchat.conf
+
+	exec "$HEXCHAT" --url=irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
+}
+
 # internal functions
 irc_check_environ()
 {
 	use_xchat=0
 	if [ -n "${GDMSESSION}"  ] || \
-		[ "${DESKTOP_SESSION}" = "LXDE" ]; then
+		[ "${DESKTOP_SESSION}" = "LXDE" ] || \
+		[ "${DESKTOP_SESSION}" = "LXQT" ]; then
 			use_xchat=1
 	fi
 }
@@ -391,8 +417,10 @@ if [ -z "$DISPLAY" ]; then
 else
 	# X11
 
-	[ -x "$XCHAT" ] && [ "$use_xchat" = "1" ] &&\
-		irc_xchat
+	if [ "$use_xchat" = "1" ]; then
+		[ -x "$HEXCHAT" ] && irc_hexchat
+                [ -x "$XCHAT" ] && irc_xchat
+	fi
 
 	[ -x "$KONVERSATION" ] && \
 		irc_konversation
@@ -410,4 +438,3 @@ for i in "$SSFTSH" "$IRSSI" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
 		echo "$i: NOT found."						1>&2
 	fi
 done
-
