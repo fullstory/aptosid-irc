@@ -1,8 +1,8 @@
-aptosid-irc (0.7.1) UNRELEASED; urgency=medium
+aptosid-irc (0.7.1) unstable; urgency=medium
 
-  * NOT RELEASED YET
+  * refresh icons.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 26 Nov 2015 03:51:14 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 23:16:14 +0100
 
 aptosid-irc (0.7.0) unstable; urgency=medium
 
