@@ -1,8 +1,19 @@
 aptosid-irc (0.7.1) unstable; urgency=medium
 
   * refresh icons.
+  * bump standards version to 4.7.0, no changes necessary.
+  * switch to compat level 13.
+  * make lintian a little happier:
+    - vcs-field-uses-insecure-uri Git
+    - cute-field Vcs-git vs Vcs-Git
+    - insecure-copyright-format-uri
+    - source: silent-on-rules-requiring-root
+    - source: trailing-whitespace [debian/changelog:596]
+    - source: trailing-whitespace [debian/changelog:88]
+    - priority-extra-is-replaced-by-priority-optional
+    - source: tab-in-license-text [debian/copyright:86]
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 23:16:14 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 03 Nov 2024 23:19:57 +0100
 
 aptosid-irc (0.7.0) unstable; urgency=medium
 
@@ -85,7 +96,7 @@ aptosid-irc (0.6.4) unstable; urgency=low
 
   [ Joaquim Boura ]
   * when GDMSESSION is defined then the main x-client is xchat
-  * missing space in control file added. 
+  * missing space in control file added.
 
   [ Stefan Lippers-Hollmann ]
   * add another override for legacy systems.
@@ -593,4 +604,3 @@ kanotix-irc (0.1) unstable; urgency=low
   * Initial Release.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 16 Jul 2005 15:04:06 +0200
-

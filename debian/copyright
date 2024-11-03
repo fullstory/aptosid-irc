@@ -1,7 +1,7 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: aptosid-irc
 Upstream-Contact: Stefan Lippers-Hollmann <s.l-h@gmx.de>
-Source: git://github.com/fullstory/aptosid-irc.git
+Source: https://github.com/fullstory/aptosid-irc.git
 
 Files: *
 Copyright: 2005-2015, Stefan Lippers-Hollmann <s.l-h@gmx.de>
@@ -212,21 +212,21 @@ License: CC-BY-SA-3.0
     to Distribute and Publicly Perform Adaptations.
  .
     For the avoidance of doubt:
-	Non-waivable Compulsory License Schemes. In those jurisdictions in
-	which the right to collect royalties through any statutory or
-	compulsory licensing scheme cannot be waived, the Licensor reserves
-	the exclusive right to collect such royalties for any exercise by
-	You of the rights granted under this License;
-	Waivable Compulsory License Schemes. In those jurisdictions in which
-	the right to collect royalties through any statutory or compulsory
-	licensing scheme can be waived, the Licensor waives the exclusive
-	right to collect such royalties for any exercise by You of the
-	rights granted under this License; and,
-	Voluntary License Schemes. The Licensor waives the right to collect
-	royalties, whether individually or, in the event that the Licensor
-	is a member of a collecting society that administers voluntary
-	licensing schemes, via that society, from any exercise by You of the
-	rights granted under this License.
+        Non-waivable Compulsory License Schemes. In those jurisdictions in
+        which the right to collect royalties through any statutory or
+        compulsory licensing scheme cannot be waived, the Licensor reserves
+        the exclusive right to collect such royalties for any exercise by
+        You of the rights granted under this License;
+        Waivable Compulsory License Schemes. In those jurisdictions in which
+        the right to collect royalties through any statutory or compulsory
+        licensing scheme can be waived, the Licensor waives the exclusive
+        right to collect such royalties for any exercise by You of the
+        rights granted under this License; and,
+        Voluntary License Schemes. The Licensor waives the right to collect
+        royalties, whether individually or, in the event that the Licensor
+        is a member of a collecting society that administers voluntary
+        licensing schemes, via that society, from any exercise by You of the
+        rights granted under this License.
  .
  The above rights may be exercised in all media and formats whether now
  known or hereafter devised. The above rights include the right to make such
