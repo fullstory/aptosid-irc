@@ -2,9 +2,9 @@
 Type=Application
 Exec=aptosid-irc
 Icon=aptosid-irc
-Name=aptosid-irc
-Name[ru]=aptosid-чат
-Name[uk]=aptosid-чат
+Name=aptosid IRC
+Name[ru]=aptosid Чат
+Name[uk]=aptosid Чат
 GenericName=IRC Chat #aptosid
 GenericName[de]=IRC Chat #aptosid
 GenericName[ru]=Чат в канале #aptosid
