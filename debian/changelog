@@ -1,3 +1,9 @@
+aptosid-irc (0.7.4) UNRELEASED; urgency=medium
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 19 Dec 2024 04:10:21 +0100
+
 aptosid-irc (0.7.3) unstable; urgency=medium
 
   * refresh SVG graphics, shut up inkscape's migration from old versions.
