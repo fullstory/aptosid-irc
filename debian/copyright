@@ -4,7 +4,7 @@ Upstream-Contact: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Source: https://github.com/fullstory/aptosid-irc.git
 
 Files: *
-Copyright: 2005-2015, Stefan Lippers-Hollmann <s.l-h@gmx.de>
+Copyright: 2005-2024, Stefan Lippers-Hollmann <s.l-h@gmx.de>
            2005-2007, Michiel Lieuwe de Boer
 License: GPL-2.0
 
