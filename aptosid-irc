@@ -426,7 +426,7 @@ else
 		irc_konversation
 
 	# nasty fallback, but well - it works ;)
-	exec $XTERMINAL $XTERM_OPT "$0 --tty"
+	exec $XTERMINAL $XTERM_OPT ${0} --tty
 fi
 
 # Oops...
