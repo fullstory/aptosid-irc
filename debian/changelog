@@ -1,3 +1,9 @@
+aptosid-irc (0.7.5) UNRELEASED; urgency=medium
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 30 Dec 2024 06:56:19 +0100
+
 aptosid-irc (0.7.4) unstable; urgency=medium
 
   * remove problematic quotes, thanks to Kel for noticing.
