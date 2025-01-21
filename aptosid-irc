@@ -41,7 +41,7 @@ WEECHAT="$(which weechat-curses)"		|| WEECHAT="/usr/bin/weechat-curses"
 XCHAT="$(which xchat)"				|| XCHAT="/usr/bin/xchat"
 
 # internal functions
-fll_irssi()
+irc_irssi()
 {
 	TERM_TYPE="utf-8"
 	#TERM_TYPE="8bit"
@@ -346,16 +346,6 @@ irc_hexchat()
 	exec "$HEXCHAT" --url=irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
 }
 
-# internal functions
-irc_check_environ()
-{
-	use_xchat=0
-	if [ -n "${GDMSESSION}"  ] || \
-		[ "${DESKTOP_SESSION}" = "LXDE" ] || \
-		[ "${DESKTOP_SESSION}" = "LXQT" ]; then
-			use_xchat=1
-	fi
-}
 ##############################################################################
 #                               int main(void);                              #
 ##############################################################################
@@ -404,26 +394,19 @@ ssft_read_string "${FLL_DISTRO_NAME} IRC Chat" "Choose your nick" || exit 0
 NICK="$SSFT_RESULT"
 
 # try to start your irc client
-irc_check_environ
 if [ -z "$DISPLAY" ]; then
 	# tty
 	if [ -x "$IRSSI" ]; then
-		fll_irssi
+		irc_irssi
 		exit "$?"
 	fi
 
 	[ -x "$WEECHAT" ] && \
 		exec $WEECHAT "irc://$NICK@$FLL_IRC_SERVER:$FLL_IRC_PORT/$FLL_IRC_CHANNEL"
 else
-	# X11
-
-	if [ "$use_xchat" = "1" ]; then
-		[ -x "$HEXCHAT" ] && irc_hexchat
-                [ -x "$XCHAT" ] && irc_xchat
-	fi
-
-	[ -x "$KONVERSATION" ] && \
-		irc_konversation
+	[ -x "$HEXCHAT" ] && irc_hexchat
+	[ -x "$XCHAT" ] && irc_xchat
+	[ -x "$KONVERSATION" ] && irc_konversation
 
 	# nasty fallback, but well - it works ;)
 	exec $XTERMINAL $XTERM_OPT ${0} --tty
