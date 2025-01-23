@@ -1,12 +1,9 @@
-aptosid-irc (0.7.5) UNRELEASED; urgency=medium
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+aptosid-irc (0.7.5) unstable; urgency=medium
 
   [ Kel Modderman ]
   * Nuke irc_check_environ() and just start installed client.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 30 Dec 2024 06:56:19 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Jan 2025 03:57:30 +0100
 
 aptosid-irc (0.7.4) unstable; urgency=medium
 
