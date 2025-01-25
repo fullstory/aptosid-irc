@@ -38,7 +38,6 @@ HEXCHAT="$(which hexchat)"			|| HEXCHAT="/usr/bin/hexchat"
 IRSSI="$(which irssi)"				|| IRSSI="/usr/bin/irssi"
 KONVERSATION="$(which konversation)"		|| KONVERSATION="/usr/bin/konversation"
 WEECHAT="$(which weechat-curses)"		|| WEECHAT="/usr/bin/weechat-curses"
-XCHAT="$(which xchat)"				|| XCHAT="/usr/bin/xchat"
 
 # internal functions
 irc_irssi()
@@ -297,31 +296,6 @@ irc_konversation()
 	exec "$KONVERSATION" --server "$FLL_IRC_SERVER" --port "$FLL_IRC_PORT" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
 }
 
-# internal functions
-irc_xchat()
-{
-	if [ -e "/home/$USER/.xchat2/xchat.conf" ]; then
-		sed -i	-e "/^irc_nick.*/d" \
-			-e "/^irc_user_name.*/d" \
-			-e "/^irc_real_name.*/d" \
-			-e "/^tab_layout.*/d" \
-				/home/$USER/.xchat2/xchat.conf
-
-	else
-		mkdir -p /home/$USER/.xchat2
-		touch /home/$USER/.xchat2/xchat.conf
-	fi
-
-	echo "irc_nick1 = $NICK" >> /home/$USER/.xchat2/xchat.conf
-	echo "irc_nick2 = ${NICK}_" >> /home/$USER/.xchat2/xchat.conf
-	echo "irc_nick3 = ${NICK}__" >> /home/$USER/.xchat2/xchat.conf
-	echo "irc_user_name = $NICK" >> /home/$USER/.xchat2/xchat.conf
-	echo "irc_real_name = $NICK" >> /home/$USER/.xchat2/xchat.conf
-	echo "tab_layout = 0" >> /home/$USER/.xchat2/xchat.conf
-
-	exec "$XCHAT" --url=irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
-}
-
 irc_hexchat()
 {
 	if [ -e "/home/$USER/.config/hexchat/hexchat.conf" ]; then
@@ -405,7 +379,6 @@ if [ -z "$DISPLAY" ]; then
 		exec $WEECHAT "irc://$NICK@$FLL_IRC_SERVER:$FLL_IRC_PORT/$FLL_IRC_CHANNEL"
 else
 	[ -x "$HEXCHAT" ] && irc_hexchat
-	[ -x "$XCHAT" ] && irc_xchat
 	[ -x "$KONVERSATION" ] && irc_konversation
 
 	# nasty fallback, but well - it works ;)
