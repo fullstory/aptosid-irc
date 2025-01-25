@@ -38,6 +38,7 @@ HEXCHAT="$(which hexchat)"			|| HEXCHAT="/usr/bin/hexchat"
 IRSSI="$(which irssi)"				|| IRSSI="/usr/bin/irssi"
 KONVERSATION="$(which konversation)"		|| KONVERSATION="/usr/bin/konversation"
 WEECHAT="$(which weechat-curses)"		|| WEECHAT="/usr/bin/weechat-curses"
+SRAIN="$(which srain)"				|| SRAIN="/usr/bin/srain"
 
 # internal functions
 irc_irssi()
@@ -320,6 +321,43 @@ irc_hexchat()
 	exec "$HEXCHAT" --url=irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
 }
 
+irc_srain()
+{
+	if [ -e "/home/$USER/.config/srain/srain.cfg" ]; then
+		sed -i	-e "/^irc_nick.*/d" \
+			-e "/^irc_user_name.*/d" \
+			-e "/^irc_real_name.*/d" \
+			-e "/^tab_layout.*/d" \
+				"/home/$USER/.config/srain/srain.cfg"
+	else
+		mkdir -p "/home/$USER/.config/srain"
+		touch "/home/$USER/.config/srain/srain.cfg"
+		cat > "/home/$USER/.config/srain/srain.cfg" <<_EOF_
+auto-connect = [ "OFTC" ]
+log = {
+  prompt-color = true
+}
+server-list =
+(
+	{
+		name = "OFTC"
+		addresses = ["irc.oftc.net:6697"]
+		tls = true
+		encoding = "utf-8"
+    auto-join = ["#aptosid"]
+    user = {
+      nickname = "$NICK"
+      username = "$NICK"
+      realname = "$NICK"
+    }
+  }
+)
+_EOF_
+	fi
+
+	exec "$SRAIN"
+}
+
 ##############################################################################
 #                               int main(void);                              #
 ##############################################################################
@@ -379,6 +417,7 @@ if [ -z "$DISPLAY" ]; then
 		exec $WEECHAT "irc://$NICK@$FLL_IRC_SERVER:$FLL_IRC_PORT/$FLL_IRC_CHANNEL"
 else
 	[ -x "$HEXCHAT" ] && irc_hexchat
+	[ -x "$SRAIN" ] && irc_srain
 	[ -x "$KONVERSATION" ] && irc_konversation
 
 	# nasty fallback, but well - it works ;)
