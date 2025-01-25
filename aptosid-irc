@@ -339,11 +339,11 @@ log = {
 }
 server-list =
 (
-	{
-		name = "OFTC"
-		addresses = ["irc.oftc.net:6697"]
-		tls = true
-		encoding = "utf-8"
+  {
+    name = "OFTC"
+    addresses = ["irc.oftc.net:6697"]
+    tls = true
+    encoding = "utf-8"
     auto-join = ["#aptosid"]
     user = {
       nickname = "$NICK"
