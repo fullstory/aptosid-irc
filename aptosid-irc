@@ -323,13 +323,7 @@ irc_hexchat()
 
 irc_srain()
 {
-	if [ -e "/home/$USER/.config/srain/srain.cfg" ]; then
-		sed -i	-e "/^irc_nick.*/d" \
-			-e "/^irc_user_name.*/d" \
-			-e "/^irc_real_name.*/d" \
-			-e "/^tab_layout.*/d" \
-				"/home/$USER/.config/srain/srain.cfg"
-	else
+	if [ ! -e "/home/$USER/.config/srain/srain.cfg" ]; then
 		mkdir -p "/home/$USER/.config/srain"
 		touch "/home/$USER/.config/srain/srain.cfg"
 		cat > "/home/$USER/.config/srain/srain.cfg" <<_EOF_
