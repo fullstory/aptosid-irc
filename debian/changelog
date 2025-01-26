@@ -1,7 +1,4 @@
-aptosid-irc (0.7.6) UNRELEASED; urgency=medium
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+aptosid-irc (0.7.6) unstable; urgency=medium
 
   [ Kel Modderman ]
   * Remove xchat support.
@@ -10,7 +7,7 @@ aptosid-irc (0.7.6) UNRELEASED; urgency=medium
   * Use ssl when launching konversation.
   * Adjust Suggests: drop xchat and add srain.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Jan 2025 03:58:08 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 26 Jan 2025 09:37:34 +0100
 
 aptosid-irc (0.7.5) unstable; urgency=medium
 
