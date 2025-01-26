@@ -14,7 +14,7 @@ Architecture: all
 Depends: ${misc:Depends},
  ssft,
  irssi | weechat-curses
-Suggests: konversation | hexchat | xchat,
+Suggests: konversation | srain | hexchat,
  python,
  distro-defaults,
  xterm | x-terminal-emulator,
