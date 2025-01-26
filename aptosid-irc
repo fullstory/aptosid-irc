@@ -294,7 +294,7 @@ _EOF_
 # internal functions
 irc_konversation()
 {
-	exec "$KONVERSATION" --server "$FLL_IRC_SERVER" --port "$FLL_IRC_PORT" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
+	exec "$KONVERSATION" --ssl --server "$FLL_IRC_SERVER" --port "$FLL_IRC_PORT" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
 }
 
 irc_hexchat()
