@@ -14,7 +14,7 @@
 
 # override tool behaviour through distro-defaults
 FLL_IRC_SERVER="irc.oftc.net"
-FLL_IRC_PORT="6667"
+FLL_IRC_PORT="6697"
 FLL_IRC_CHANNEL="#aptosid"
 FLL_DISTRO_NAME="aptosid"
 [ -r /etc/default/distro ] && . /etc/default/distro
@@ -335,10 +335,10 @@ server-list =
 (
   {
     name = "OFTC"
-    addresses = ["irc.oftc.net:6697"]
+    addresses = ["$FLL_IRC_SERVER:$FLL_IRC_PORT"]
     tls = true
     encoding = "utf-8"
-    auto-join = ["#aptosid"]
+    auto-join = ["$FLL_IRC_CHANNEL"]
     user = {
       nickname = "$NICK"
       username = "$NICK"
