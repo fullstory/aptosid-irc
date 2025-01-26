@@ -6,6 +6,7 @@ aptosid-irc (0.7.6) UNRELEASED; urgency=medium
   [ Kel Modderman ]
   * Remove xchat support.
   * Add support for srain.
+  * Use port 6697 by default.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Jan 2025 03:58:08 +0100
 
