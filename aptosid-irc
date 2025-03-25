@@ -39,6 +39,7 @@ IRSSI="$(which irssi)"				|| IRSSI="/usr/bin/irssi"
 KONVERSATION="$(which konversation)"		|| KONVERSATION="/usr/bin/konversation"
 WEECHAT="$(which weechat-curses)"		|| WEECHAT="/usr/bin/weechat-curses"
 SRAIN="$(which srain)"				|| SRAIN="/usr/bin/srain"
+KVIRC="$(which kvirc)"				|| kvirc="/usr/bin/kvirc"
 
 # internal functions
 irc_irssi()
@@ -297,6 +298,38 @@ irc_konversation()
 	exec "$KONVERSATION" --ssl --server "$FLL_IRC_SERVER" --port "$FLL_IRC_PORT" --channel "$FLL_IRC_CHANNEL" --nick "$NICK"
 }
 
+irc_kvirc()
+{
+	if [ ! -d "/home/$USER/.config/KVIrc/config" ]; then
+		mkdir -p "/home/$USER/.config/KVIrc/config"
+		cat  << _EOF_ >> "/home/$USER/.config/KVIrc/config/serverdb.kvc"
+[OFTC]
+0_Port=$FLL_IRC_PORT
+0_Hostname=$FLL_IRC_SERVER
+0_Nick=$NICK
+NServers=1
+0_AutoConnect=true
+0_Description=OFTC
+0_SSL=true
+0_AutoJoinChannels=$FLL_IRC_CHANNEL
+0_Id=$(mawk 'BEGIN{print int(1000 * rand())}')
+0_RealName=$NICK
+0_User=$NICK
+0_AlternativeNick=${NICK}_
+_EOF_
+		cat  << _EOF_ >> "/home/$USER/.config/KVIrc/config/main.kvc"
+[Frame]
+boolShowTipAtStartup=false
+boolShowServersConnectDialogOnStart=false
+boolShowChannelsJoinOnIrc=false
+boolConfirmCloseWhenThereAreConnections=false
+boolDoNotSuggestRestoreDefaultScript=true
+_EOF_
+	fi
+
+	exec "$KVIRC"
+}
+
 irc_hexchat()
 {
 	if [ -e "/home/$USER/.config/hexchat/hexchat.conf" ]; then
@@ -318,7 +351,7 @@ irc_hexchat()
 	echo "irc_real_name = $NICK" >> /home/$USER/.config/hexchat/hexchat.conf
 	echo "tab_layout = 0" >> /home/$USER/.config/hexchat/hexchat.conf
 
-	exec "$HEXCHAT" --url=irc://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
+	exec "$HEXCHAT" --url=ircs://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
 }
 
 irc_srain()
@@ -408,10 +441,11 @@ if [ -z "$DISPLAY" ]; then
 	fi
 
 	[ -x "$WEECHAT" ] && \
-		exec $WEECHAT "irc://$NICK@$FLL_IRC_SERVER:$FLL_IRC_PORT/$FLL_IRC_CHANNEL"
+		exec $WEECHAT "ircs://$NICK@$FLL_IRC_SERVER:$FLL_IRC_PORT/$FLL_IRC_CHANNEL"
 else
 	[ -x "$HEXCHAT" ] && irc_hexchat
 	[ -x "$SRAIN" ] && irc_srain
+	[ -x "$KVIRC" ] && irc_kvirc
 	[ -x "$KONVERSATION" ] && irc_konversation
 
 	# nasty fallback, but well - it works ;)
