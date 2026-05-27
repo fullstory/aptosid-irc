@@ -34,12 +34,12 @@ SSFTSH="$(which ssft.sh)"			|| SSFTSH="/usr/bin/ssft.sh"
 SU="$(which su)"				|| SU="/bin/su"
 XTERMINAL="$(which x-terminal-emulator)"	|| XTERMINAL="/usr/bin/x-terminal-emulator"
 
-HEXCHAT="$(which hexchat)"			|| HEXCHAT="/usr/bin/hexchat"
 IRSSI="$(which irssi)"				|| IRSSI="/usr/bin/irssi"
 KONVERSATION="$(which konversation)"		|| KONVERSATION="/usr/bin/konversation"
 WEECHAT="$(which weechat-curses)"		|| WEECHAT="/usr/bin/weechat-curses"
 SRAIN="$(which srain)"				|| SRAIN="/usr/bin/srain"
 KVIRC="$(which kvirc)"				|| kvirc="/usr/bin/kvirc"
+ZOITECHAT="$(which zoitechat)"			|| ZOITECHAT="/usr/bin/zoitechat"
 
 # internal functions
 irc_irssi()
@@ -330,28 +330,28 @@ _EOF_
 	exec "$KVIRC"
 }
 
-irc_hexchat()
+irc_zoitechat()
 {
-	if [ -e "/home/$USER/.config/hexchat/hexchat.conf" ]; then
+	if [ -e "/home/$USER/.config/zoitechat/zoitechat.conf" ]; then
 		sed -i	-e "/^irc_nick.*/d" \
 			-e "/^irc_user_name.*/d" \
 			-e "/^irc_real_name.*/d" \
 			-e "/^tab_layout.*/d" \
-				/home/$USER/.config/hexchat/hexchat.conf
+				/home/$USER/.config/zoitechat/zoitechat.conf
 
 	else
-		mkdir -p /home/$USER/.config/hexchat
-		touch /home/$USER/.config/hexchat/hexchat.conf
+		mkdir -p /home/$USER/.config/zoitechat
+		touch /home/$USER/.config/zoitechat/zoitechat.conf
 	fi
 
-	echo "irc_nick1 = $NICK" >> /home/$USER/.config/hexchat/hexchat.conf
-	echo "irc_nick2 = ${NICK}_" >> /home/$USER/.config/hexchat/hexchat.conf
-	echo "irc_nick3 = ${NICK}__" >> /home/$USER/.config/hexchat/hexchat.conf
-	echo "irc_user_name = $NICK" >> /home/$USER/.config/hexchat/hexchat.conf
-	echo "irc_real_name = $NICK" >> /home/$USER/.config/hexchat/hexchat.conf
-	echo "tab_layout = 0" >> /home/$USER/.config/hexchat/hexchat.conf
+	echo "irc_nick1 = $NICK" >> /home/$USER/.config/zoitechat/zoitechat.conf
+	echo "irc_nick2 = ${NICK}_" >> /home/$USER/.config/zoitechat/zoitechat.conf
+	echo "irc_nick3 = ${NICK}__" >> /home/$USER/.config/zoitechat/zoitechat.conf
+	echo "irc_user_name = $NICK" >> /home/$USER/.config/zoitechat/zoitechat.conf
+	echo "irc_real_name = $NICK" >> /home/$USER/.config/zoitechat/zoitechat.conf
+	echo "tab_layout = 0" >> /home/$USER/.config/zoitechat/zoitechat.conf
 
-	exec "$HEXCHAT" --url=ircs://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
+	exec "$ZOITECHAT" --url=ircs://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
 }
 
 irc_srain()
@@ -443,7 +443,7 @@ if [ -z "$DISPLAY" ]; then
 	[ -x "$WEECHAT" ] && \
 		exec $WEECHAT "ircs://$NICK@$FLL_IRC_SERVER:$FLL_IRC_PORT/$FLL_IRC_CHANNEL"
 else
-	[ -x "$HEXCHAT" ] && irc_hexchat
+	[ -x "$ZOITECHAT" ] && irc_zoitechat
 	[ -x "$SRAIN" ] && irc_srain
 	[ -x "$KVIRC" ] && irc_kvirc
 	[ -x "$KONVERSATION" ] && irc_konversation
@@ -454,7 +454,7 @@ fi
 
 # Oops...
 echo "ERROR: failed to start any suitable IRC Client"				1>&2
-for i in "$SSFTSH" "$IRSSI" "$KONVERSATION" "$WEECHAT" "$XCHAT"; do
+for i in "$SSFTSH" "$IRSSI" "$KONVERSATION" "$KVIRC" "$SRAIN" "$WEECHAT" "$ZOITECHAT"; do
 	if [ -x "$i" ]; then
 		echo "$i: found."
 	else
