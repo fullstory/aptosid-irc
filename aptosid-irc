@@ -389,8 +389,15 @@ _EOF_
 #                               int main(void);                              #
 ##############################################################################
 
+# treat X11 (incl. XWayland) and native Wayland sessions as graphical
+if [ -n "$DISPLAY" ] || [ -n "$WAYLAND_DISPLAY" ]; then
+	GUI="yes"
+else
+	GUI=""
+fi
+
 # yes, this stuff is elementary
-if [ -z "$DISPLAY" ]; then
+if [ -z "$GUI" ]; then
 	for i in "$SSFTSH" "$SU"; do
 		if [ ! -x "$i" ]; then
 			echo "$i: missing, terminate abnormally"		1>&2
@@ -408,10 +415,21 @@ fi
 
 if [ "$1" = "--tty" ]; then
 	DISPLAY=""
+	WAYLAND_DISPLAY=""
+	GUI=""
 fi
 
 # initialize ssft
 . "$SSFTSH"
+# ssft_choose_frontend only honours $DISPLAY, so force a graphical
+# frontend on native Wayland sessions where $DISPLAY may be empty
+if [ -n "$GUI" ] && [ -z "$SSFT_FRONTEND" ]; then
+	if [ -x "$(which zenity 2>/dev/null)" ]; then
+		SSFT_FRONTEND="zenity"
+	elif [ -x "$(which kdialog 2>/dev/null)" ]; then
+		SSFT_FRONTEND="kdialog"
+	fi
+fi
 [ -n "$SSFT_FRONTEND" ] ||  SSFT_FRONTEND="$(ssft_choose_frontend)"
 
 # are you insane?
@@ -420,7 +438,7 @@ if [ "`id -u`" = "0" ]; then
 	echo ""									1>&2
 	echo "Don't ever call any IRC client as root"				1>&2
 
-	if [ -n "$DISPLAY" ]; then
+	if [ -n "$GUI" ]; then
 		ssft_display_message "ERROR" "ROOOOOOOOOOOOT has landed!\n\nDon't ever call any IRC client as root"
 	fi
 
@@ -433,7 +451,7 @@ ssft_read_string "${FLL_DISTRO_NAME} IRC Chat" "Choose your nick" || exit 0
 NICK="$SSFT_RESULT"
 
 # try to start your irc client
-if [ -z "$DISPLAY" ]; then
+if [ -z "$GUI" ]; then
 	# tty
 	if [ -x "$IRSSI" ]; then
 		irc_irssi

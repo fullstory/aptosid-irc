@@ -1,6 +1,11 @@
 aptosid-irc (0.7.9) UNRELEASED; urgency=medium
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
+
+  [ Kel Modderman ]
+  * Start under native Wayland compositors (hyprland, labwc, sway) by
+    detecting WAYLAND_DISPLAY as a graphical session, not just DISPLAY.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 28 May 2026 04:32:04 +0200
 
