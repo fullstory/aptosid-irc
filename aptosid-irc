@@ -337,6 +337,7 @@ irc_zoitechat()
 			-e "/^irc_user_name.*/d" \
 			-e "/^irc_real_name.*/d" \
 			-e "/^tab_layout.*/d" \
+			-e "/^gui_dark_mode.*/d" \
 				/home/$USER/.config/zoitechat/zoitechat.conf
 
 	else
@@ -350,6 +351,7 @@ irc_zoitechat()
 	echo "irc_user_name = $NICK" >> /home/$USER/.config/zoitechat/zoitechat.conf
 	echo "irc_real_name = $NICK" >> /home/$USER/.config/zoitechat/zoitechat.conf
 	echo "tab_layout = 0" >> /home/$USER/.config/zoitechat/zoitechat.conf
+	echo "gui_dark_mode = 2" >> /home/$USER/.config/zoitechat/zoitechat.conf
 
 	exec "$ZOITECHAT" --url=ircs://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
 }
