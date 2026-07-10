@@ -340,6 +340,7 @@ irc_zoitechat()
 			-e "/^tab_layout.*/d" \
 			-e "/^gui_dark_mode.*/d" \
 			-e "/^gui_gtk3_variant.*/d" \
+			-e "/^gui_gtk3_theme.*/d" \
 			-e "/^text_font .*/d" \
 				/home/$USER/.config/zoitechat/zoitechat.conf
 
@@ -363,6 +364,9 @@ irc_zoitechat()
 	echo "irc_real_name = $NICK" >> /home/$USER/.config/zoitechat/zoitechat.conf
 	echo "gui_dark_mode = 2" >> /home/$USER/.config/zoitechat/zoitechat.conf
 	echo "gui_gtk3_variant = 2" >> /home/$USER/.config/zoitechat/zoitechat.conf
+	# pin the widget chrome to Adwaita-dark; the id is sha1 of the theme
+	# path /usr/share/themes/Adwaita-dark (gnome-themes-extra-data)
+	echo "gui_gtk3_theme = system:d1d3999eccb6b157168445a902b61308307832a1" >> /home/$USER/.config/zoitechat/zoitechat.conf
 	echo "text_font = Monospace 12" >> /home/$USER/.config/zoitechat/zoitechat.conf
 
 	exec "$ZOITECHAT" --url=ircs://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"

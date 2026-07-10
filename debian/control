@@ -14,7 +14,8 @@ Architecture: all
 Depends: ${misc:Depends},
  ssft,
  irssi | weechat-curses
-Suggests: konversation | srain | hexchat,
+Recommends: gnome-themes-extra-data
+Suggests: zoitechat | konversation | srain | kvirc | hexchat,
  python,
  distro-defaults,
  xterm | x-terminal-emulator,

@@ -9,6 +9,11 @@ aptosid-irc (0.7.11) UNRELEASED; urgency=medium
     settings on first run.
   * zoitechat: drop the obsolete tab_layout key from generated configs
     (real key is gui_tab_layout); it is now purged, not rewritten.
+  * zoitechat: pin the GTK widget theme to Adwaita-dark (gui_gtk3_theme)
+    so the chrome follows the dark theme, not just the text palette.
+  * Recommend gnome-themes-extra-data (ships /usr/share/themes/Adwaita-
+    dark, the pinned theme id) and suggest the zoitechat and kvirc
+    clients.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 09 Jul 2026 22:37:36 +0200
 
