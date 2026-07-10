@@ -1,6 +1,14 @@
 aptosid-irc (0.7.11) UNRELEASED; urgency=medium
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
+
+  [ Kel Modderman ]
+  * zoitechat: open with the Adwaita-dark palette and bump the default
+    font to Monospace 12; apply the shared colors.conf from aptosid-
+    settings on first run.
+  * zoitechat: drop the obsolete tab_layout key from generated configs
+    (real key is gui_tab_layout); it is now purged, not rewritten.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 09 Jul 2026 22:37:36 +0200
 

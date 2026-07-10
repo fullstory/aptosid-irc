@@ -333,11 +333,14 @@ _EOF_
 irc_zoitechat()
 {
 	if [ -e "/home/$USER/.config/zoitechat/zoitechat.conf" ]; then
+		# tab_layout: obsolete key, purge only (never re-added)
 		sed -i	-e "/^irc_nick.*/d" \
 			-e "/^irc_user_name.*/d" \
 			-e "/^irc_real_name.*/d" \
 			-e "/^tab_layout.*/d" \
 			-e "/^gui_dark_mode.*/d" \
+			-e "/^gui_gtk3_variant.*/d" \
+			-e "/^text_font .*/d" \
 				/home/$USER/.config/zoitechat/zoitechat.conf
 
 	else
@@ -345,13 +348,22 @@ irc_zoitechat()
 		touch /home/$USER/.config/zoitechat/zoitechat.conf
 	fi
 
+	# lay down the aptosid Adwaita-dark palette on first run; zoitechat
+	# only reads ~/.config/zoitechat, so copy the template shipped by
+	# aptosid-settings-common
+	ZTHEME="/usr/share/aptosid-settings-common/zoitechat/colors.conf"
+	if [ ! -e "/home/$USER/.config/zoitechat/colors.conf" ] && [ -r "$ZTHEME" ]; then
+		cp "$ZTHEME" /home/$USER/.config/zoitechat/colors.conf
+	fi
+
 	echo "irc_nick1 = $NICK" >> /home/$USER/.config/zoitechat/zoitechat.conf
 	echo "irc_nick2 = ${NICK}_" >> /home/$USER/.config/zoitechat/zoitechat.conf
 	echo "irc_nick3 = ${NICK}__" >> /home/$USER/.config/zoitechat/zoitechat.conf
 	echo "irc_user_name = $NICK" >> /home/$USER/.config/zoitechat/zoitechat.conf
 	echo "irc_real_name = $NICK" >> /home/$USER/.config/zoitechat/zoitechat.conf
-	echo "tab_layout = 0" >> /home/$USER/.config/zoitechat/zoitechat.conf
 	echo "gui_dark_mode = 2" >> /home/$USER/.config/zoitechat/zoitechat.conf
+	echo "gui_gtk3_variant = 2" >> /home/$USER/.config/zoitechat/zoitechat.conf
+	echo "text_font = Monospace 12" >> /home/$USER/.config/zoitechat/zoitechat.conf
 
 	exec "$ZOITECHAT" --url=ircs://"$FLL_IRC_SERVER":"$FLL_IRC_PORT"/"$FLL_IRC_CHANNEL"
 }
