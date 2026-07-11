@@ -1,7 +1,4 @@
-aptosid-irc (0.7.11) UNRELEASED; urgency=medium
-
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
+aptosid-irc (0.7.11) unstable; urgency=medium
 
   [ Kel Modderman ]
   * zoitechat: open with the Adwaita-dark palette and bump the default
